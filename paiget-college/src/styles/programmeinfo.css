@@ -1,0 +1,141 @@
+.programme-info {
+  width: 100%;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f1ed 0%, #faf8f5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.programme-container {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.programme-subtitle {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.programme-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #a01e1e;
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.programme-year {
+  font-size: 1.8rem;
+  color: #6ba82e;
+  font-weight: 700;
+  margin: 30px 0;
+  letter-spacing: 1px;
+}
+
+.programme-focus {
+  margin: 50px 0;
+}
+
+.programme-focus h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.focus-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.focus-list li {
+  font-size: 1.2rem;
+  color: #a01e1e;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.programme-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 50px;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.programme-contact svg {
+  color: #a01e1e;
+  stroke-width: 3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .programme-info {
+    padding: 60px 15px;
+  }
+
+  .programme-title {
+    font-size: 2.5rem;
+  }
+
+  .programme-year {
+    font-size: 1.3rem;
+  }
+
+  .programme-focus h3 {
+    font-size: 1.1rem;
+  }
+
+  .focus-list li {
+    font-size: 1rem;
+  }
+
+  .programme-contact {
+    font-size: 1.2rem;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .programme-info {
+    padding: 40px 12px;
+  }
+
+  .programme-subtitle {
+    font-size: 14px;
+  }
+
+  .programme-title {
+    font-size: 1.8rem;
+  }
+
+  .programme-year {
+    font-size: 1.1rem;
+  }
+
+  .programme-focus h3 {
+    font-size: 0.95rem;
+  }
+
+  .focus-list li {
+    font-size: 0.85rem;
+  }
+
+  .programme-contact {
+    font-size: 1rem;
+    flex-direction: column;
+  }
+}
