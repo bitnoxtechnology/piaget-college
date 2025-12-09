@@ -11,14 +11,14 @@ const ProgrammeInfo = () => {
 
         <h2 className="programme-title">Piaget College of Education</h2>
 
-        <div className="programme-year">2023/2024 NCE PROGRAMME</div>
+        <div className="programme-year">NCE PROGRAMME</div>
 
         <div className="programme-focus">
           <h3>We Focus on:</h3>
           <ul className="focus-list">
             <li>PRIMARY EDUCATION</li>
             <li>EARLY CHILDHOOD EDUCATION</li>
-            <li>LANGUAGES AND COMPUTER STUDIES</li>
+            <li>LANGUAGES (YORUBA, ENGLISH & FRENCH)</li>
           </ul>
         </div>
 

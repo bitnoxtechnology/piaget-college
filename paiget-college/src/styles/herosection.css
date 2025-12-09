@@ -125,9 +125,14 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+/* New animated text styles replacing the old subtitle box */
 .hero-subtitle-animated {
   margin-top: 1.5rem;
   max-width: 600px;
+  padding: 1rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 0.25rem;
+  display: inline-block;
 }
 
 .animated-text-container {
@@ -136,18 +141,15 @@
   gap: 0.05em;
   font-size: 1.125rem;
   line-height: 1.6;
-  color: #ffffff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  color: #a01e1e;
   font-weight: 500;
   letter-spacing: 0.3px;
+  text-shadow: none;
 }
 
 .animated-character {
   display: inline-block;
-  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #a01e1e;
 }
 
 /* Responsive Design */
@@ -191,6 +193,7 @@
   .hero-content {
     padding: 1.5rem 2rem;
     max-width: 100%;
+    justify-content: center;
   }
 
   .hero-title {
@@ -215,6 +218,8 @@
   .hero-subtitle-animated {
     margin-top: 1rem;
     max-width: 100%;
+    padding: 1rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.95);
   }
 
   .animated-text-container {
@@ -230,7 +235,7 @@
 
   .hero-content {
     padding: 1rem 1.5rem;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .hero-title {
@@ -260,13 +265,21 @@
     height: 18px;
   }
 
-  .animated-text-container {
-    font-size: 0.875rem;
-    line-height: 1.4;
-    letter-spacing: 0.2px;
+  .hero-subtitle-animated {
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 0.25rem;
   }
 
-  .hero-subtitle-animated {
-    margin-top: 0.75rem;
+  .animated-text-container {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+    color: #a01e1e;
+  }
+
+  .animated-character {
+    color: #a01e1e;
   }
 }

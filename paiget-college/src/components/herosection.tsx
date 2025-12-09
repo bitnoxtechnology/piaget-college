@@ -10,12 +10,12 @@ import Hero3 from "../assets/Hero3.jpeg"
 
 const slides = [
   {
-    image: Hero1,
+    image:Hero1,
     title: "Piaget College of Education",
     subtitle: "At Piaget College, we nurture future leaders with quality education and professional growth.",
   },
   {
-    image:Hero2,
+    image: Hero2,
     title: "Quality Education",
     subtitle: "Excellence in learning through dedicated faculty and world-class programs.",
   },

@@ -22,7 +22,6 @@ export default function Welcome() {
         Math.min(1, (window.innerHeight - rect.top) / (window.innerHeight + rect.height)),
       )
 
-      // Parallax zoom effect: scale from 1 to 1.15 as you scroll through the section
       const scale = 1 + scrollPercentage * 0.15
       gsap.to(imageRef.current, {
         scale: scale,
@@ -73,7 +72,6 @@ export default function Welcome() {
 
       <div className="welcome-overlay" />
 
-      {/* Content Box */}
       <motion.div className="welcome-container" ref={contentRef}>
         <div className="welcome-content">
           <motion.h2
@@ -94,37 +92,27 @@ export default function Welcome() {
             viewport={{ once: true }}
           >
             <p>
-              I am pleased to welcome you on behalf of all the members of our Piaget College of Education community. We
-              are proud of our personnel and programs.
+              Welcome to Piaget College of Education — we’re truly glad you’re here.
             </p>
 
             <p>
-              People come to Piaget College of Education to change their lives. Our chosen goal is to help them, and
-              you, achieve that. We have one objective: providing quality teacher training for the future. We aim to be
-              the college of choice for successful student learning, caring student services and open access.
+              On behalf of everyone in our community, I’m pleased to welcome you to a place we’re incredibly proud of — our people, our values, and the programs that shape future educators.
             </p>
 
             <p>
-              We will work together to create an environment that emphasizes people, respect, diversity and excellence.
-              Members of our faculty, staff and administration have come to Piaget College of Education with the highest
-              credentials and professional accomplishments.
+              Students come to Piaget College of Education because they want to transform their lives, and it’s our mission to help make that happen. Everything we do is centered on one goal: providing exceptional teacher training for the future. We aim to be your first choice for meaningful learning, genuine support, and open opportunities.
             </p>
 
             <p>
-              Our college aims to be a leader in demonstrating quality education and accountability to our community
-              with the belief that, as teachers, <strong>you matter</strong>.
+              At Piaget, we work together to build an environment that celebrates people, respect, diversity, and excellence. Our faculty, staff, and administrators bring outstanding qualifications and real-world experience — all to ensure you receive an education that truly empowers you.
             </p>
 
             <p>
-              We take your trust in us seriously. We view your time here as valuable and your education one of the most
-              important investments you can make. In today's highly competitive world, candidates with quality education
-              are in high demand and that is what we provide.
+              We understand the trust you place in us, and we don’t take it lightly. Your time here is valuable, and your education is one of the most important investments you’ll ever make. In today’s competitive world, individuals with strong, quality training stand out — and that’s exactly what we provide.
             </p>
 
             <p>
-              We invite you to let Piaget College of Education put you in touch with the human side of success. May what
-              you will take from your college experience exceed all your expectations and help you achieve all that you
-              will work diligently towards.
+              We invite you to experience the human side of success here at Piaget College of Education. May your journey with us be richer than you expected, and may it equip you to achieve everything you are determined to pursue.
             </p>
           </motion.div>
         </div>
