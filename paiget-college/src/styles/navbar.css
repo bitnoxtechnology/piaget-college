@@ -197,6 +197,7 @@
 .mobile-nav-link {
   display: flex;
   justify-content: space-between;
+  text-decoration: none;
   align-items: center;
   width: 100%;
   padding: 1rem 2rem;
@@ -204,7 +205,6 @@
   border: none;
   border-bottom: 1px solid var(--border-color);
   color: var(--dark-text);
-  font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }

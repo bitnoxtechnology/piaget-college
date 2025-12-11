@@ -111,33 +111,43 @@ export default function Navbar() {
             <ul className="nav-menu mobile">
               {navItems.map((item) => (
                 <li key={item.label} className="mobile-nav-item">
-                  <button
-                    className={`mobile-nav-link ${isActive(item) ? "active" : ""}`}
-                    onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}
-                  >
-                    {item.label}
-                    {item.submenu && (
-                      <ChevronDown size={18} className={`chevron ${activeDropdown === item.label ? "open" : ""}`} />
-                    )}
-                  </button>
-                  {item.submenu && activeDropdown === item.label && (
-                    <motion.div
-                      className="mobile-submenu"
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                    >
-                      {item.submenu.map((sub) => (
-                        <Link
-                          key={sub.label}
-                          to={sub.href}
-                          className={`mobile-submenu-item ${location.pathname === sub.href ? "active" : ""}`}
-                          onClick={() => setIsOpen(false)}
+                  {item.submenu ? (
+                    <>
+                      <button
+                        className={`mobile-nav-link ${isActive(item) ? "active" : ""}`}
+                        onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}
+                      >
+                        {item.label}
+                        <ChevronDown size={18} className={`chevron ${activeDropdown === item.label ? "open" : ""}`} />
+                      </button>
+                      {activeDropdown === item.label && (
+                        <motion.div
+                          className="mobile-submenu"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
                         >
-                          {sub.label}
-                        </Link>
-                      ))}
-                    </motion.div>
+                          {item.submenu.map((sub) => (
+                            <Link
+                              key={sub.label}
+                              to={sub.href}
+                              className={`mobile-submenu-item ${location.pathname === sub.href ? "active" : ""}`}
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className={`mobile-nav-link ${isActive(item) ? "active" : ""}`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
                   )}
                 </li>
               ))}
