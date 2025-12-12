@@ -1,0 +1,162 @@
+.objectives-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+}
+
+.objectives-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.objectives-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.objectives-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #a01e1e;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.objectives-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #a01e1e, #d97706);
+  border-radius: 2px;
+}
+
+.objectives-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  max-width: 900px;
+  margin: 30px auto 0;
+}
+
+.strategies-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.strategies-header h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.strategies-header h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #a01e1e, transparent);
+}
+
+.strategies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.strategy-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 1px solid rgba(160, 30, 30, 0.1);
+}
+
+.strategy-card:hover {
+  box-shadow: 0 8px 30px rgba(160, 30, 30, 0.15);
+  border-color: rgba(160, 30, 30, 0.3);
+}
+
+.strategy-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #a01e1e, #d97706);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.strategy-card:hover .strategy-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.strategy-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.strategy-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .objectives-section {
+    padding: 60px 20px;
+  }
+
+  .objectives-title {
+    font-size: 2.2rem;
+  }
+
+  .objectives-description {
+    font-size: 1rem;
+  }
+
+  .strategies-header h3 {
+    font-size: 1.6rem;
+  }
+
+  .strategies-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .strategy-card {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .objectives-title {
+    font-size: 1.8rem;
+  }
+
+  .strategy-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .strategy-title {
+    font-size: 1.1rem;
+  }
+}
