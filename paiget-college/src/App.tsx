@@ -9,8 +9,19 @@ import AboutPage from "./pages/aboutpage"
 import Schoolspage from "./pages/academics/subpages/schoolspage"
 import Availablecoursespage from "./pages/academics/subpages/availablecoursespage"
 import Sandwichprogramme from "./pages/academics/subpages/sandwichprogramme"
-import Calendarpage from "./pages/academics/subpages/calendarpage" 
+import Calendarpage from "./pages/academics/subpages/calendarpage"
 import Workshopspage from "./pages/workshops/workshopspage"
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
+
 function AppContent() {
   const [loading, setLoading] = useState(false)
   const location = useLocation()
@@ -23,14 +34,15 @@ function AppContent() {
 
   return (
     <>
+      <ScrollToTop />
       <Loader isActive={loading} />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path= "/academics/schools" element={<Schoolspage />} />
-        <Route path= "/academics/available-courses" element={<Availablecoursespage />} />
-        <Route path= "/academics/sandwich-programme" element={<Sandwichprogramme />} />
-        <Route path= "/academics/calendar" element={<Calendarpage />} />
+        <Route path="/academics/schools" element={<Schoolspage />} />
+        <Route path="/academics/available-courses" element={<Availablecoursespage />} />
+        <Route path="/academics/sandwich-programme" element={<Sandwichprogramme />} />
+        <Route path="/academics/calendar" element={<Calendarpage />} />
         <Route path="/workshops" element={<Workshopspage />} />
       </Routes>
     </>

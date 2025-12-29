@@ -17,7 +17,7 @@ const navItems: NavItem[] = [
   { label: "ABOUT US", href: "/about" },
   {
     label: "ACADEMICS",
-    href: "/",
+    href: "#", // Changed from "/" to "#" to prevent homepage conflict
     submenu: [
       { label: "Schools", href: "/academics/schools" },
       { label: "Available Courses", href: "/academics/available-courses" },
@@ -48,8 +48,10 @@ export default function Navbar() {
   }, [])
 
   const isActive = (item: NavItem) => {
-    if (location.pathname === item.href) return true
+    // Only check exact match if href is not "#"
+    if (item.href !== "#" && location.pathname === item.href) return true
     
+    // Check if any submenu item is active
     if (item.submenu) {
       return item.submenu.some(sub => location.pathname === sub.href)
     }
@@ -57,24 +59,34 @@ export default function Navbar() {
     return false
   }
 
+
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         {/* Logo */}
         <Link to="/" className="navbar-logo">
-          <img src={SecondaryLogo} alt="" />
+          <img src={SecondaryLogo} alt="Piaget College Logo" />
         </Link>
 
         {/* Desktop Nav */}
         <ul className="nav-menu desktop">
           {navItems.map((item) => (
             <li key={item.label} className="nav-item">
-              <Link 
-                to={item.href} 
-                className={`nav-link ${isActive(item) ? "active" : ""}`}
-              >
-                {item.label}
-              </Link>
+              {item.submenu ? (
+                <span 
+                  className={`nav-link ${isActive(item) ? "active" : ""}`}
+                  style={{ cursor: "default" }}
+                >
+                  {item.label}
+                </span>
+              ) : (
+                <Link 
+                  to={item.href} 
+                  className={`nav-link ${isActive(item) ? "active" : ""}`}
+                >
+                  {item.label}
+                </Link>
+              )}
               {item.submenu && (
                 <div className="submenu">
                   {item.submenu.map((sub) => (
