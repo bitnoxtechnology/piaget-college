@@ -137,12 +137,12 @@ export default function CourseGrid() {
             </motion.a>
             
             <motion.a
-              href="/admissions/status"
+              href="/contact-us"
               className="cta-btn secondary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Check Status
+              Contact Us
               <ArrowRight size={20} />
             </motion.a>
           </div>

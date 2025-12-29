@@ -4,7 +4,7 @@ const YouTubeVideo = () => {
   return (
     <section className="youtube-section">
       <div className="youtube-container">
-        <h2 className="section-title">Featured Video</h2>
+        <h2 className="youtube-section-title">Featured Video</h2>
 
         <div className="video-wrapper">
           <iframe

@@ -6,6 +6,7 @@ import ProgrammeInfo from "../components/programmeinfo"
 import NewsEvents from "../components/newsevent"
 import YouTubeVideo from "../components/youtubevideo"
 import Footer from "../components/footer"
+import Testimonials from "../components/testimonial"
 function homepage() {
   return (
     <div>
@@ -15,6 +16,7 @@ function homepage() {
         <Welcome />
         <ProgrammeInfo />
         <NewsEvents />
+        <Testimonials/>
         <YouTubeVideo/>
         <Footer />
     </div>

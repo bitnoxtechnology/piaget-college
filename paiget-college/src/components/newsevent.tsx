@@ -66,19 +66,19 @@ const NewsEvents = () => {
   return (
     <section className="news-events-section">
       <div className="news-container">
-        <h2 className="section-title">News & Events</h2>
+        <h2 className="news-section-title">News & Events</h2>
 
         <div className="news-grid" ref={containerRef}>
           {newsItems.map((item) => (
             <motion.div key={item.id} className="news-card" whileHover={{ y: -8 }} transition={{ duration: 0.3 }}>
-              <div className="card-image-wrapper">
-                <img src={item.image || "/placeholder.svg"} alt={item.title} className="card-image" />
-                <div className="card-overlay"></div>
+              <div className="news-card-image-wrapper">
+                <img src={item.image || "/placeholder.svg"} alt={item.title} className="news-card-image" />
+                <div className="news-card-overlay"></div>
               </div>
 
-              <div className="card-content">
-                <h3 className="card-title">{item.title}</h3>
-                <p className="card-description">{item.description}</p>
+              <div className="news-card-content">
+                <h3 className="news-card-title">{item.title}</h3>
+                <p className="news-card-description">{item.description}</p>
 
                 <button className="read-more-btn" onClick={() => handleReadMore(item.link)}>
                   <span>Read More</span>

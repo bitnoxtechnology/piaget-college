@@ -10,6 +10,7 @@ import Schoolspage from "./pages/academics/subpages/schoolspage"
 import Availablecoursespage from "./pages/academics/subpages/availablecoursespage"
 import Sandwichprogramme from "./pages/academics/subpages/sandwichprogramme"
 import Calendarpage from "./pages/academics/subpages/calendarpage" 
+import Workshopspage from "./pages/workshops/workshopspage"
 function AppContent() {
   const [loading, setLoading] = useState(false)
   const location = useLocation()
@@ -30,6 +31,7 @@ function AppContent() {
         <Route path= "/academics/available-courses" element={<Availablecoursespage />} />
         <Route path= "/academics/sandwich-programme" element={<Sandwichprogramme />} />
         <Route path= "/academics/calendar" element={<Calendarpage />} />
+        <Route path="/workshops" element={<Workshopspage />} />
       </Routes>
     </>
   )

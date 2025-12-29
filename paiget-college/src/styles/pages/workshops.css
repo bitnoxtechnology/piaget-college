@@ -1,0 +1,289 @@
+.workshops-hero {
+  height: 60vh;
+  min-height: 400px;
+  background-image: url("/images/welcome-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-top: 80px;
+}
+
+.workshops-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(160, 30, 30, 0.85), rgba(0, 0, 0, 0.7));
+}
+
+.workshops-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.workshops-hero-tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.workshops-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.workshops-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.workshop-section {
+  padding: 100px 0;
+  background: #fdfaf5;
+}
+
+.workshop-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.workshop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.workshop-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.workshop-card:hover {
+  transform: translateY(-10px);
+}
+
+.workshop-card-header {
+  background: #a01e1e;
+  color: white;
+  padding: 30px;
+}
+
+.workshop-card-header h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.workshop-card-body {
+  padding: 30px;
+  flex-grow: 1;
+}
+
+.workshop-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.info-item span {
+  font-weight: 500;
+  color: #333;
+}
+
+.workshop-topics h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #a01e1e;
+}
+
+.workshop-topics ul {
+  list-style: none;
+  padding: 0;
+}
+
+.workshop-topics li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #444;
+}
+
+.workshop-card-footer {
+  padding: 20px 30px;
+  background: #fff5f5;
+  border-top: 1px dashed #ffdada;
+}
+
+.certificate-notice {
+  font-size: 0.85rem;
+  color: #a01e1e;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+.workshop-rsvp-section {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.rsvp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.rsvp-info h2 {
+  font-size: 2.5rem;
+  color: #a01e1e;
+  margin-bottom: 20px;
+}
+
+.rsvp-info p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.payment-details {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  border-left: 4px solid #a01e1e;
+}
+
+.fee-badge {
+  display: inline-block;
+  background: #a01e1e;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 10px 0 25px;
+}
+
+.bank-info h4 {
+  margin-bottom: 10px;
+}
+
+.bank-info p {
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+.pay-online-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: transparent;
+  color: #a01e1e;
+  border: 2px solid #a01e1e;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.pay-online-btn:hover {
+  background: #a01e1e;
+  color: white;
+}
+
+.rsvp-form-container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.rsvp-form .form-group {
+  margin-bottom: 20px;
+}
+
+.rsvp-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.rsvp-form input,
+.rsvp-form select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.submit-rsvp-btn {
+  width: 100%;
+  background: #a01e1e;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-rsvp-btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 992px) {
+  .rsvp-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .workshop-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workshop-info-grid {
+    grid-template-columns: 1fr;
+  }
+}

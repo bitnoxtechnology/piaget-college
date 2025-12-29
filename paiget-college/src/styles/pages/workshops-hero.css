@@ -1,0 +1,75 @@
+.workshops-hero {
+  position: relative;
+  padding: 160px 0 120px;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 50%, #fafafa 100%);
+  margin-top: 60px;
+  overflow: hidden;
+}
+
+.workshops-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 15% 25%, rgba(160, 30, 30, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(160, 30, 30, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.workshops-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.workshops-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #a01e1e 0%, #8a1919 100%);
+  color: white;
+  padding: 10px 26px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 16px rgba(160, 30, 30, 0.2);
+}
+
+.workshops-hero-content h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  margin-bottom: 26px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -2px;
+  line-height: 1.05;
+}
+
+.hero-tagline {
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  color: #555;
+  margin-bottom: 0;
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .workshops-hero {
+    padding: 120px 0 90px;
+  }
+
+  .workshops-hero-content h1 {
+    letter-spacing: -1.2px;
+  }
+}

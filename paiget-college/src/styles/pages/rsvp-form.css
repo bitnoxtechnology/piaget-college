@@ -1,0 +1,191 @@
+.workshop-rsvp-section {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.rsvp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rsvp-info h2 {
+  font-size: 2.8rem;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.rsvp-info > p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 45px;
+  font-size: 1.05rem;
+}
+
+.payment-details {
+  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #f0f0f0;
+}
+
+.payment-details h3 {
+  font-size: 1.4rem;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.fee-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #a01e1e 0%, #8a1919 100%);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0 0 35px;
+  box-shadow: 0 4px 16px rgba(160, 30, 30, 0.2);
+  letter-spacing: 0.5px;
+}
+
+.bank-info {
+  padding: 28px;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border: 1px solid #f0f0f0;
+}
+
+.bank-info h4 {
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.bank-info p {
+  margin-bottom: 10px;
+  font-size: 0.98rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.bank-info p strong {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.pay-online-btn {
+  display: inline-block;
+  margin-top: 5px;
+  background: transparent;
+  color: #a01e1e;
+  border: 2px solid #a01e1e;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+}
+
+.pay-online-btn:hover {
+  background: linear-gradient(135deg, #a01e1e 0%, #8a1919 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(160, 30, 30, 0.25);
+}
+
+.rsvp-form-container {
+  background: white;
+  padding: 50px 45px;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+}
+
+.rsvp-form .form-group {
+  margin-bottom: 24px;
+}
+
+.rsvp-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+}
+
+.rsvp-form input,
+.rsvp-form select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  color: #333;
+}
+
+.rsvp-form input:focus,
+.rsvp-form select:focus {
+  outline: none;
+  border-color: #a01e1e;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(160, 30, 30, 0.08);
+}
+
+.rsvp-form input::placeholder {
+  color: #999;
+}
+
+.submit-rsvp-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #a01e1e 0%, #8a1919 100%);
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 16px rgba(160, 30, 30, 0.2);
+}
+
+.submit-rsvp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(160, 30, 30, 0.3);
+}
+
+@media (max-width: 992px) {
+  .workshop-rsvp-section {
+    padding: 90px 0;
+  }
+
+  .rsvp-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .rsvp-info h2 {
+    font-size: 2.2rem;
+  }
+
+  .rsvp-form-container {
+    padding: 40px 30px;
+  }
+}
