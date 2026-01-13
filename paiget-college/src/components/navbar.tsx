@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Menu, X, ChevronDown } from "lucide-react"
-import { Link, useLocation } from "react-router-dom"
-import { motion, AnimatePresence } from "framer-motion"
-import SecondaryLogo from "../assets/logo2.png"
-import "../styles/navbar.css"
+import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import SecondaryLogo from "../assets/logo2.png";
+import "../styles/navbar.css";
 
 interface NavItem {
-  label: string
-  href: string
-  submenu?: { label: string; href: string }[]
+  label: string;
+  href: string;
+  submenu?: { label: string; href: string }[];
 }
 
 const navItems: NavItem[] = [
@@ -29,36 +29,34 @@ const navItems: NavItem[] = [
   { label: "WORKSHOPS", href: "/workshops" },
   { label: "GALLERY", href: "/gallery" },
   { label: "CONTACT US", href: "/contact" },
-  { label: "PDE", href: "/pde" },
-]
+];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const [scrolled, setScrolled] = useState(false)
-  const location = useLocation()
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
-    }
+      setScrolled(window.scrollY > 10);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const isActive = (item: NavItem) => {
     // Only check exact match if href is not "#"
-    if (item.href !== "#" && location.pathname === item.href) return true
-    
+    if (item.href !== "#" && location.pathname === item.href) return true;
+
     // Check if any submenu item is active
     if (item.submenu) {
-      return item.submenu.some(sub => location.pathname === sub.href)
+      return item.submenu.some((sub) => location.pathname === sub.href);
     }
-    
-    return false
-  }
 
+    return false;
+  };
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
@@ -73,15 +71,15 @@ export default function Navbar() {
           {navItems.map((item) => (
             <li key={item.label} className="nav-item">
               {item.submenu ? (
-                <span 
+                <span
                   className={`nav-link ${isActive(item) ? "active" : ""}`}
                   style={{ cursor: "default" }}
                 >
                   {item.label}
                 </span>
               ) : (
-                <Link 
-                  to={item.href} 
+                <Link
+                  to={item.href}
                   className={`nav-link ${isActive(item) ? "active" : ""}`}
                 >
                   {item.label}
@@ -90,10 +88,12 @@ export default function Navbar() {
               {item.submenu && (
                 <div className="submenu">
                   {item.submenu.map((sub) => (
-                    <Link 
-                      key={sub.label} 
-                      to={sub.href} 
-                      className={`submenu-item ${location.pathname === sub.href ? "active" : ""}`}
+                    <Link
+                      key={sub.label}
+                      to={sub.href}
+                      className={`submenu-item ${
+                        location.pathname === sub.href ? "active" : ""
+                      }`}
                     >
                       {sub.label}
                     </Link>
@@ -105,7 +105,11 @@ export default function Navbar() {
         </ul>
 
         {/* Mobile Menu Button */}
-        <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+        <button
+          className="mobile-menu-btn"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -126,11 +130,22 @@ export default function Navbar() {
                   {item.submenu ? (
                     <>
                       <button
-                        className={`mobile-nav-link ${isActive(item) ? "active" : ""}`}
-                        onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}
+                        className={`mobile-nav-link ${
+                          isActive(item) ? "active" : ""
+                        }`}
+                        onClick={() =>
+                          setActiveDropdown(
+                            activeDropdown === item.label ? null : item.label
+                          )
+                        }
                       >
                         {item.label}
-                        <ChevronDown size={18} className={`chevron ${activeDropdown === item.label ? "open" : ""}`} />
+                        <ChevronDown
+                          size={18}
+                          className={`chevron ${
+                            activeDropdown === item.label ? "open" : ""
+                          }`}
+                        />
                       </button>
                       {activeDropdown === item.label && (
                         <motion.div
@@ -143,7 +158,9 @@ export default function Navbar() {
                             <Link
                               key={sub.label}
                               to={sub.href}
-                              className={`mobile-submenu-item ${location.pathname === sub.href ? "active" : ""}`}
+                              className={`mobile-submenu-item ${
+                                location.pathname === sub.href ? "active" : ""
+                              }`}
                               onClick={() => setIsOpen(false)}
                             >
                               {sub.label}
@@ -155,7 +172,9 @@ export default function Navbar() {
                   ) : (
                     <Link
                       to={item.href}
-                      className={`mobile-nav-link ${isActive(item) ? "active" : ""}`}
+                      className={`mobile-nav-link ${
+                        isActive(item) ? "active" : ""
+                      }`}
                       onClick={() => setIsOpen(false)}
                     >
                       {item.label}
@@ -168,5 +187,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </nav>
-  )
+  );
 }

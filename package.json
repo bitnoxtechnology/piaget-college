@@ -1,0 +1,26 @@
+{
+  "name": "piaget-college",
+  "version": "1.0.0",
+  "description": "Piaget College Website",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitnoxtechnology/piaget-college.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bitnoxtechnology/piaget-college/issues"
+  },
+  "homepage": "https://github.com/bitnoxtechnology/piaget-college#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

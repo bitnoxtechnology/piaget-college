@@ -1,13 +1,13 @@
-import type React from "react"
-import { motion } from "framer-motion"
-import { Send } from "lucide-react"
-import "../../styles/pages/contact-form.css"
+import type React from "react";
+import { motion } from "framer-motion";
+import { Send } from "lucide-react";
+import "../../styles/pages/contact-form.css";
 
 function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission
-  }
+  };
 
   return (
     <motion.div
@@ -30,7 +30,12 @@ function ContactForm() {
           </div>
           <div className="form-group">
             <label htmlFor="email">Your Email *</label>
-            <input type="email" id="email" required placeholder="john@example.com" />
+            <input
+              type="email"
+              id="email"
+              required
+              placeholder="john@example.com"
+            />
           </div>
         </div>
 
@@ -47,7 +52,12 @@ function ContactForm() {
 
         <div className="form-group">
           <label htmlFor="message">Your Message *</label>
-          <textarea id="message" rows={6} required placeholder="Write your message here..."></textarea>
+          <textarea
+            id="message"
+            rows={6}
+            required
+            placeholder="Write your message here..."
+          ></textarea>
         </div>
 
         <button type="submit" className="submit-btn">
@@ -56,7 +66,7 @@ function ContactForm() {
         </button>
       </form>
     </motion.div>
-  )
+  );
 }
 
-export default ContactForm
+export default ContactForm;
