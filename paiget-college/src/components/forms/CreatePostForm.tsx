@@ -24,12 +24,11 @@ import {
   type CreateBlogInput,
 } from "@/lib/validations/blog-validator";
 import { quillModules } from "../editor/quill-data";
+import { useNavigate } from "react-router-dom";
 
-interface Props {
-  onCreated?: () => void;
-}
+const CreatePostForm: React.FC = () => {
+  const navigate = useNavigate();
 
-const CreatePostForm: React.FC<Props> = ({ onCreated }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const createForm = useForm<CreateBlogInput>({
@@ -64,7 +63,7 @@ const CreatePostForm: React.FC<Props> = ({ onCreated }) => {
           tags: [],
           isPublished: false,
         });
-        onCreated?.();
+        navigate("/admin/posts");
       }
     } catch (error) {
       toast.error(`Failed to create post.`);
@@ -218,7 +217,7 @@ const CreatePostForm: React.FC<Props> = ({ onCreated }) => {
                 <Input
                   {...field}
                   id="tags"
-                  placeholder="e.g., technology, web development, tutorial"
+                  placeholder="e.g., workshops, events, academics"
                   disabled={isSubmitting}
                   value={
                     Array.isArray(field.value)

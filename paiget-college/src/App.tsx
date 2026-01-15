@@ -28,6 +28,8 @@ import ProtectedRoutes from "./protected/ProtectedRoutes";
 import DashboardLayout from "./layout/DashboardLayout";
 import DashboardOverview from "./pages/admin/overview/DashboardOverview";
 import CreatePostPage from "./pages/admin/create-post/CreatePostPage";
+import AdminPostsPage from "./pages/admin/posts/AdminPostsPage";
+import EditPostPage from "./pages/admin/edit-post/EditPostPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -82,7 +84,9 @@ function AppContent() {
         <Route element={<ProtectedRoutes />}>
           <Route element={<DashboardLayout />} path="/admin">
             <Route path="overview" element={<DashboardOverview />} />
+            <Route path="posts" element={<AdminPostsPage />} />
             <Route path="create-post" element={<CreatePostPage />} />
+            <Route path="posts/edit/:slug" element={<EditPostPage />} />
           </Route>
         </Route>
 
