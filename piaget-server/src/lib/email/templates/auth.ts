@@ -10,16 +10,16 @@ export const otpEmailTemplate = ({
   expiresInMinutes?: number;
 }) => ({
   to: email,
-  subject: "Your Bitnox Sign-In OTP Code",
+  subject: "Your Piaget Sign-In OTP Code",
   text: `
 Hello ${name},
 
-Your One-Time Password (OTP) for signing in to your Bitnox account is: ${otp}
+Your One-Time Password (OTP) for signing in to your Piaget account is: ${otp}
 
 This code will expire in ${expiresInMinutes} minutes. 
 If you did not request this, please ignore this message.
 
-- The Bitnox Team
+- The Piaget Team
   `,
   html: `
     <html>
@@ -85,13 +85,13 @@ If you did not request this, please ignore this message.
         <div class="header">Sign-In Verification</div>
         <div class="content">
           <h2>Hello ${name},</h2>
-          <p>Your One-Time Password (OTP) for signing in to your Bitnox account is:</p>
+          <p>Your One-Time Password (OTP) for signing in to your Piaget account is:</p>
           <div class="otp-box">${otp}</div>
           <p>This code is valid for <strong>${expiresInMinutes} minutes</strong>.</p>
           <p>If you did not request this code, you can safely ignore this email.</p>
         </div>
         <div class="footer">
-          <p>© ${new Date().getFullYear()} Bitnox Technology Solutions. All rights reserved.</p>
+          <p>© ${new Date().getFullYear()} Piaget College. All rights reserved.</p>
         </div>
       </div>
     </body>

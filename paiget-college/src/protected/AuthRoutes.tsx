@@ -17,7 +17,7 @@ const AuthRoutes = () => {
     );
   }
 
-  return !user ? <Outlet /> : <Navigate to={"/admin"} replace />;
+  return !user ? <Outlet /> : <Navigate to={"/admin/overview"} replace />;
 };
 
 export default AuthRoutes;

@@ -11,7 +11,7 @@ type Params = {
 
 export const sendEmail = async ({
   to,
-  from = "Bitnox Technology <bitnox@mailer.bitnoxsolution.com>",
+  from = "Piaget College <bitnox@mailer.bitnoxsolution.com>",
   subject,
   text,
   html,

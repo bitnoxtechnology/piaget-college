@@ -4,6 +4,38 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-primary-100: #a01e1e;
+  --color-primary-200: #9a2626;
+  --color-primary-300: #872121;
+
+  --color-secondary-100: #e96565;
+  --color-secondary-200: #f28b8b;
+  --color-secondary-300: #dc8b8b;
+  --color-secondary-400: #8f4040;
+  --color-secondary-500: #7e3434;
+
+  --color-tertiary-100: #0a0a0a;
+  --color-tertiary-200: #ffffff;
+  --color-tertiary-300: #eda4a4;
+  --color-tertiary-400: #f19a9a;
+
+  --color-dark-100: #000000;
+  --color-dark-200: #0f1117;
+  --color-dark-300: #151821;
+  --color-dark-400: #212734;
+  --color-dark-500: #101012;
+
+  --color-light-400: #858ead;
+  --color-light-500: #7b8ec8;
+  --color-light-700: #dce3f1;
+  --color-light-800: #f4f6f8;
+  --color-light-850: #fdfdfd;
+  --color-light-900: #ffffff;
+
+  --shadow-form-input: 0 0 20px rgba(160, 30, 30, 0.1);
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -115,4 +147,13 @@
 }
 
 @layer base {
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
