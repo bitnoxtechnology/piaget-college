@@ -30,6 +30,9 @@ import DashboardOverview from "./pages/admin/overview/DashboardOverview";
 import CreatePostPage from "./pages/admin/create-post/CreatePostPage";
 import AdminPostsPage from "./pages/admin/posts/AdminPostsPage";
 import EditPostPage from "./pages/admin/edit-post/EditPostPage";
+import CreateTestimonialPage from "./pages/admin/create-testimonial/CreateTestimonialPage";
+import AdminTestimonialsPage from "./pages/admin/testimonials/AdminTestimonialsPage";
+import EditTestimonialPage from "./pages/admin/edit-testimonial/EditTestimonialPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -87,6 +90,15 @@ function AppContent() {
             <Route path="posts" element={<AdminPostsPage />} />
             <Route path="create-post" element={<CreatePostPage />} />
             <Route path="posts/edit/:slug" element={<EditPostPage />} />
+            <Route path="testimonials" element={<AdminTestimonialsPage />} />
+            <Route
+              path="create-testimonial"
+              element={<CreateTestimonialPage />}
+            />
+            <Route
+              path="testimonials/edit/:testimonialId"
+              element={<EditTestimonialPage />}
+            />
           </Route>
         </Route>
 

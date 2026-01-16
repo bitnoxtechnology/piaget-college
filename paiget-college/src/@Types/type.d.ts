@@ -28,3 +28,15 @@ interface IBlog {
   createdAt: Date;
   updatedAt: Date;
 }
+
+interface ITestimonial {
+  _id: string;
+  name: string;
+  position: string;
+  image: string;
+  content: string;
+  publishedAt?: Date;
+  isPublished: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}

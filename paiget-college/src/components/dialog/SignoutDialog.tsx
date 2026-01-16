@@ -9,8 +9,9 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/dialog";
+import { useAuth } from "@/hooks/use-auth";
 import { Loader } from "lucide-react";
-import React, { useCallback } from "react";
+import React from "react";
 import { toast } from "sonner";
 
 const SignoutDialog = (props: {
@@ -18,48 +19,52 @@ const SignoutDialog = (props: {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const { isOpen, setIsOpen } = props;
-
-  //   const { mutate, isPending } = useMutation({
-  //     mutationFn: signoutFn,
-  //     onSuccess: () => {
-  //       setIsOpen(false);
-  //       toast.success("Signout Success", {
-  //         description: "You have been signed out successfully.",
-  //       });
-  //       window.location.href = "/";
-  //     },
-  //     onError: (error) => {
-  //       toast.error("Signout Error", {
-  //         description: error.message,
-  //       });
-  //     },
-  //   });
+  const { logout } = useAuth();
+  const [isLoading, setIsLoading] = React.useState(false);
 
   //   const handleSignout = useCallback(() => {
   //     mutate();
   //   }, []);
 
+  const handleLogout = async () => {
+    setIsLoading(true);
+    try {
+      await logout();
+      setIsOpen(false);
+      toast.success("Signout Success", {
+        description: "You have been signed out successfully.",
+      });
+      window.location.href = "/";
+    } catch (error) {
+      console.log(error);
+      toast.error("Signout Error", {
+        description: "An error occurred while signing out.",
+      });
+      setIsLoading(false);
+    }
+  };
+
   return (
     <>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="bg-card w-3/4 sm:max-w-lg border-none">
+        <DialogContent className="bg-card w-3/4 sm:max-w-lg border-none p-3!">
           <DialogHeader>
             <DialogTitle>Are you sure you want to sign out?</DialogTitle>
-            <DialogDescription className="pt-3">
+            <DialogDescription className="pt-3!">
               This will end your current session and you will need to log in
               again to access your account.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            {/* <Button
-              disabled={isPending}
+            <Button
+              disabled={isLoading}
               type="button"
-              className="!text-card-foreground bg-secondary hover:!bg-accent"
-              onClick={handleSignout}
+              className="text-card-foreground! bg-secondary hover:bg-accent! px-2! cursor-pointer"
+              onClick={() => handleLogout()}
             >
-              {isPending && <Loader className="animate-spin" />}
+              {isLoading && <Loader className="animate-spin" />}
               Yes
-            </Button> */}
+            </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
