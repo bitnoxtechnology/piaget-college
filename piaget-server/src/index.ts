@@ -10,6 +10,7 @@ import { connectToDatabase } from "./database/db";
 import { authRouter } from "./modules/auth/auth.route";
 import blogRouter from "./modules/blog/blog.route";
 import testimonialRouter from "./modules/testimonial/testimonial.route";
+import workshopRouter from "./modules/workshop/workshop.route";
 // import redis from "./database/redis";
 
 const isDevelopment = config.NODE_ENV === "development";
@@ -59,6 +60,7 @@ app.use(`${BASE_PATH}/email`, emailRouter);
 app.use(`${BASE_PATH}/auth`, authRouter);
 app.use(`${BASE_PATH}/blog`, blogRouter);
 app.use(`${BASE_PATH}/testimonials`, testimonialRouter);
+app.use(`${BASE_PATH}/workshops`, workshopRouter);
 
 app.use(errorHandler);
 

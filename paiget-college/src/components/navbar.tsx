@@ -29,6 +29,7 @@ const navItems: NavItem[] = [
   { label: "WORKSHOPS", href: "/workshops" },
   { label: "GALLERY", href: "/gallery" },
   { label: "CONTACT US", href: "/contact" },
+  { label: "DASHBOARD", href: "/admin/overview" },
 ];
 
 export default function Navbar() {
@@ -58,6 +59,24 @@ export default function Navbar() {
     return false;
   };
 
+  const whatToRender = (item: NavItem) => {
+    if (item.href === "/admin/overview") {
+      return (
+        <Link to={item.href} className="nav-link bg-primary-100 text-white!">
+          Dashboard
+        </Link>
+      );
+    } else
+      return (
+        <Link
+          to={item.href}
+          className={`nav-link ${isActive(item) ? "active" : ""}`}
+        >
+          {item.label}
+        </Link>
+      );
+  };
+
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
@@ -78,12 +97,7 @@ export default function Navbar() {
                   {item.label}
                 </span>
               ) : (
-                <Link
-                  to={item.href}
-                  className={`nav-link ${isActive(item) ? "active" : ""}`}
-                >
-                  {item.label}
-                </Link>
+                whatToRender(item)
               )}
               {item.submenu && (
                 <div className="submenu">
