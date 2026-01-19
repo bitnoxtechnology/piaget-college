@@ -26,7 +26,15 @@ const navItems: NavItem[] = [
     ],
   },
   { label: "E-LIBRARY", href: "/library" },
-  { label: "WORKSHOPS", href: "/workshops" },
+  {
+    label: "EVENTS",
+    href: "#",
+    submenu: [
+      { label: "Workshops", href: "/workshops" },
+      { label: "News", href: "/news" },
+    ],
+  },
+
   { label: "GALLERY", href: "/gallery" },
   { label: "CONTACT US", href: "/contact" },
   { label: "DASHBOARD", href: "/admin/overview" },

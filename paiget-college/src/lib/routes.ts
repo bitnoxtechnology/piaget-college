@@ -32,20 +32,17 @@ export const dashboardRoutes = [
     label: "Workshops",
     route: "/admin/workshops",
     icon: Banknote,
-    subMenu: true,
-    subMenuItems: [
-      { label: "All", route: "/admin/workshops" },
-      { label: "Old", route: "/admin/workshops/old" },
-    ],
+    subMenu: false,
+    subMenuItems: [],
   },
-  {
-    label: "Settings",
-    route: "/admin/settings",
-    icon: Settings,
-    subMenu: true,
-    subMenuItems: [
-      { label: "My Account", route: "/admin/settings/account" },
-      { label: "Platform", route: "/admin/settings/platform" },
-    ],
-  },
+  // {
+  //   label: "Settings",
+  //   route: "/admin/settings",
+  //   icon: Settings,
+  //   subMenu: true,
+  //   subMenuItems: [
+  //     { label: "My Account", route: "/admin/settings/account" },
+  //     { label: "Platform", route: "/admin/settings/platform" },
+  //   ],
+  // },
 ];

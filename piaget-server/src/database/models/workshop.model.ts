@@ -4,6 +4,7 @@ export interface IWorkshop extends Document {
   title: string;
   description: string;
   date: Date;
+  programs?: string[];
   startTime: string;
   endTime: string;
   location: string;
@@ -20,6 +21,7 @@ const workshopSchema = new Schema<IWorkshop>(
     title: { type: String, required: true, trim: true },
     description: { type: String, required: true },
     date: { type: Date, required: true },
+    programs: { type: [String], default: [] },
     startTime: { type: String, required: true },
     endTime: { type: String, required: true },
     location: { type: String, required: true },

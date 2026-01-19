@@ -40,3 +40,20 @@ interface ITestimonial {
   createdAt: Date;
   updatedAt: Date;
 }
+
+interface IWorkshop {
+  _id: string;
+  title: string;
+  description: string;
+  date: Date;
+  programs: string[];
+  startTime: string;
+  endTime: string;
+  location: string;
+  instructor?: string;
+  capacity?: number;
+  enrolledCount?: number;
+  isPublished: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}

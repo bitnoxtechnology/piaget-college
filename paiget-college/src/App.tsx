@@ -33,6 +33,10 @@ import EditPostPage from "./pages/admin/edit-post/EditPostPage";
 import CreateTestimonialPage from "./pages/admin/create-testimonial/CreateTestimonialPage";
 import AdminTestimonialsPage from "./pages/admin/testimonials/AdminTestimonialsPage";
 import EditTestimonialPage from "./pages/admin/edit-testimonial/EditTestimonialPage";
+import CreateWorkshopPage from "./pages/admin/create-workshop/CreateWorkshopPage";
+import AdminWorkshopsPage from "./pages/admin/workshops/AdminWorkshopsPage";
+import AllNewsPage from "./pages/news/AllNewsPage";
+import NewsDetailsPage from "./pages/news/NewsDetailsPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -77,6 +81,9 @@ function AppContent() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/contact" element={<Contactus />} />
 
+        <Route path="/news" element={<AllNewsPage />} />
+        <Route path="/news/:slug" element={<NewsDetailsPage />} />
+
         <Route element={<AuthRoutes />}>
           <Route element={<AuthLayout />} path="/auth">
             <Route path="signup" element={<Signup />} />
@@ -87,9 +94,11 @@ function AppContent() {
         <Route element={<ProtectedRoutes />}>
           <Route element={<DashboardLayout />} path="/admin">
             <Route path="overview" element={<DashboardOverview />} />
+
             <Route path="posts" element={<AdminPostsPage />} />
             <Route path="create-post" element={<CreatePostPage />} />
             <Route path="posts/edit/:slug" element={<EditPostPage />} />
+
             <Route path="testimonials" element={<AdminTestimonialsPage />} />
             <Route
               path="create-testimonial"
@@ -99,6 +108,9 @@ function AppContent() {
               path="testimonials/edit/:testimonialId"
               element={<EditTestimonialPage />}
             />
+
+            <Route path="create-workshop" element={<CreateWorkshopPage />} />
+            <Route path="workshops" element={<AdminWorkshopsPage />} />
           </Route>
         </Route>
 
