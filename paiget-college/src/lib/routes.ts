@@ -3,6 +3,7 @@ import {
   BookOpen,
   Dock,
   LayoutDashboardIcon,
+  AppWindow,
   Settings,
 } from "lucide-react";
 
@@ -32,6 +33,13 @@ export const dashboardRoutes = [
     label: "Workshops",
     route: "/admin/workshops",
     icon: Banknote,
+    subMenu: false,
+    subMenuItems: [],
+  },
+  {
+    label: "Applications",
+    route: "/admin/applications",
+    icon: AppWindow,
     subMenu: false,
     subMenuItems: [],
   },

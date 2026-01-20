@@ -38,6 +38,12 @@ import AdminWorkshopsPage from "./pages/admin/workshops/AdminWorkshopsPage";
 import AllNewsPage from "./pages/news/AllNewsPage";
 import NewsDetailsPage from "./pages/news/NewsDetailsPage";
 import TestimonialsPage from "./pages/testimonials/TestimonialsPage";
+import ApplicationPage from "./pages/apply/ApplicationPage";
+import AdminApplicationsPage from "./pages/admin/applications/AdminApplicationsPage";
+import EntryRequirementsPage from "./pages/admissions/EntryRequirementsPage";
+import ProspectiveStudentPage from "./pages/admissions/ProspectiveStudentPage";
+import HowToApplyPage from "./pages/admissions/HowToApplyPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -87,6 +93,17 @@ function AppContent() {
 
         <Route path="/testimonials" element={<TestimonialsPage />} />
 
+        <Route path="/entry-requirements" element={<EntryRequirementsPage />} />
+        <Route
+          path="/prospective-students"
+          element={<ProspectiveStudentPage />}
+        />
+        <Route path="/how-to-apply" element={<HowToApplyPage />} />
+
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+
+        <Route path="/apply" element={<ApplicationPage />} />
+
         <Route element={<AuthRoutes />}>
           <Route element={<AuthLayout />} path="/auth">
             <Route path="signup" element={<Signup />} />
@@ -114,6 +131,8 @@ function AppContent() {
 
             <Route path="create-workshop" element={<CreateWorkshopPage />} />
             <Route path="workshops" element={<AdminWorkshopsPage />} />
+
+            <Route path="applications" element={<AdminApplicationsPage />} />
           </Route>
         </Route>
 

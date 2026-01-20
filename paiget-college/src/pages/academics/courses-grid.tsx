@@ -1,8 +1,16 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { BookOpen, GraduationCap, Languages, Microscope, Baby, ArrowRight, CheckCircle } from "lucide-react"
-import "../../styles/pages/courses-grid.css"
+import { motion } from "framer-motion";
+import {
+  BookOpen,
+  GraduationCap,
+  Languages,
+  Microscope,
+  Baby,
+  ArrowRight,
+  CheckCircle,
+} from "lucide-react";
+import "../../styles/pages/courses-grid.css";
 
 const courseCategories = [
   {
@@ -41,15 +49,18 @@ const courseCategories = [
     title: "Sciences",
     icon: Microscope,
     color: "#10b981",
-    courses: ["Integrated Science/Computer Education", "Computer Science (Certificate)"],
+    courses: [
+      "Integrated Science/Computer Education",
+      "Computer Science (Certificate)",
+    ],
   },
-]
+];
 
 export default function CourseGrid() {
   return (
     <section className="course-grid-modern">
       <div className="course-container-modern">
-        <motion.div 
+        <motion.div
           className="section-header"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,14 +69,15 @@ export default function CourseGrid() {
         >
           <h2 className="section-title">Our Academic Programmes</h2>
           <p className="section-subtitle">
-            Choose from a wide range of specialized programmes designed to equip you with the knowledge and skills for excellence in education
+            Choose from a wide range of specialized programmes designed to equip
+            you with the knowledge and skills for excellence in education
           </p>
         </motion.div>
 
         <div className="courses-grid">
           {courseCategories.map((category, index) => {
-            const Icon = category.icon
-            
+            const Icon = category.icon;
+
             return (
               <motion.div
                 key={category.title}
@@ -75,11 +87,14 @@ export default function CourseGrid() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="card-glow" style={{ background: `${category.color}15` }} />
-                
+                <div
+                  className="card-glow"
+                  style={{ background: `${category.color}15` }}
+                />
+
                 <div className="card-header-courses">
-                  <div 
-                    className="icon-wrapper-courses" 
+                  <div
+                    className="icon-wrapper-courses"
                     style={{ background: `${category.color}15` }}
                   >
                     <Icon size={28} style={{ color: category.color }} />
@@ -101,19 +116,22 @@ export default function CourseGrid() {
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: 0.3 + (i * 0.1) }}
+                      transition={{ delay: 0.3 + i * 0.1 }}
                     >
-                      <div className="course-bullet" style={{ background: category.color }} />
+                      <div
+                        className="course-bullet"
+                        style={{ background: category.color }}
+                      />
                       <span>{course}</span>
                     </motion.li>
                   ))}
                 </ul>
               </motion.div>
-            )
+            );
           })}
         </div>
 
-        <motion.div 
+        <motion.div
           className="cta-section"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -122,12 +140,14 @@ export default function CourseGrid() {
         >
           <div className="cta-content">
             <h3 className="cta-title">Ready to Begin Your Journey?</h3>
-            <p className="cta-subtitle">Apply now or check your admission status</p>
+            <p className="cta-subtitle">
+              Apply now or check your admission status
+            </p>
           </div>
-          
+
           <div className="cta-buttons">
             <motion.a
-              href="/application-form"
+              href="/apply"
               className="cta-btn primary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -135,7 +155,7 @@ export default function CourseGrid() {
               Apply Now
               <ArrowRight size={20} />
             </motion.a>
-            
+
             <motion.a
               href="/contact-us"
               className="cta-btn secondary"
@@ -149,5 +169,5 @@ export default function CourseGrid() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

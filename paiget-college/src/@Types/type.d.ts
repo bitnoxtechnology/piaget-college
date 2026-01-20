@@ -57,3 +57,27 @@ interface IWorkshop {
   createdAt: Date;
   updatedAt: Date;
 }
+
+interface IApplication {
+  _id: string;
+  paymentReferenceCode: string;
+  surname: string;
+  firstname: string;
+  dateOfBirth: string;
+  gender: "Male" | "Female" | "Other";
+  nationality: string;
+  highestEducationLevel: string;
+  courseOfInterest: string;
+  program: string;
+  jambScore: string;
+  waecSubjects: string;
+  intendedStartDate: string;
+  personalMessage?: string;
+  email: string;
+  phoneNumber: string;
+  sourceOfInformation: string;
+  otherSourceDetails?: string;
+  status: "pending" | "under-review" | "accepted" | "rejected";
+  createdAt: string;
+  updatedAt: string;
+}

@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Target, GraduationCap, FileText, ArrowRight } from "lucide-react"
-import "../styles/services.css"
+import { motion } from "framer-motion";
+import { Target, GraduationCap, FileText, ArrowRight } from "lucide-react";
+import "../styles/services.css";
 
 const Services = () => {
   const services = [
@@ -10,17 +10,19 @@ const Services = () => {
       id: 1,
       icon: Target,
       title: "Discover Piaget College of Education",
-      description: "Our trained staff provide quality education in a rich and nurturing learning environment.",
+      description:
+        "Our trained staff provide quality education in a rich and nurturing learning environment.",
       buttonText: "Learn More",
-      link: "#",
+      link: "/about",
     },
     {
       id: 2,
       icon: GraduationCap,
       title: "Explore a Program that Fits You",
-      description: "Our unique college offers a stimulating combination of learning & professional growth.",
+      description:
+        "Our unique college offers a stimulating combination of learning & professional growth.",
       buttonText: "Learn More",
-      link: "#",
+      link: "/academics/available-courses",
     },
     {
       id: 3,
@@ -28,9 +30,9 @@ const Services = () => {
       title: "Apply",
       description: "Apply online right now and start your journey with us.",
       buttonText: "Apply Now",
-      link: "#",
+      link: "/apply",
     },
-  ]
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -41,7 +43,7 @@ const Services = () => {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -52,7 +54,7 @@ const Services = () => {
         duration: 0.6,
       },
     },
-  }
+  };
 
   return (
     <section className="services-section">
@@ -65,7 +67,9 @@ const Services = () => {
           viewport={{ once: true }}
         >
           <h2>Why Choose Piaget?</h2>
-          <p>Experience quality education with professional growth opportunities</p>
+          <p>
+            Experience quality education with professional growth opportunities
+          </p>
         </motion.div>
 
         <motion.div
@@ -76,13 +80,16 @@ const Services = () => {
           viewport={{ once: true }}
         >
           {services.map((service) => {
-            const IconComponent = service.icon
+            const IconComponent = service.icon;
             return (
               <motion.div
                 key={service.id}
                 className="service-card"
                 variants={cardVariants}
-                whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(160, 30, 30, 0.15)" }}
+                whileHover={{
+                  y: -10,
+                  boxShadow: "0 20px 40px rgba(160, 30, 30, 0.15)",
+                }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
                 <motion.div
@@ -97,7 +104,7 @@ const Services = () => {
                 <p>{service.description}</p>
 
                 <motion.a
-                  href={service.link} 
+                  href={service.link}
                   className="service-button"
                   whileHover={{ gap: "12px" }}
                   transition={{ duration: 0.3 }}
@@ -106,12 +113,12 @@ const Services = () => {
                   <ArrowRight size={18} />
                 </motion.a>
               </motion.div>
-            )
+            );
           })}
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;

@@ -1,58 +1,69 @@
-"use client"
+"use client";
 
-import { Facebook, Instagram, Mail, Phone, MapPin, ArrowUp } from "lucide-react"
-import { useState } from "react"
-import { useEffect } from "react"
-import "../styles/footer.css"
+import {
+  Facebook,
+  Instagram,
+  Mail,
+  Phone,
+  MapPin,
+  ArrowUp,
+} from "lucide-react";
+import { useState } from "react";
+import { useEffect } from "react";
+import "../styles/footer.css";
 
 export default function Footer() {
-  const [showScrollTop, setShowScrollTop] = useState(false)
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300)
-    }
+      setShowScrollTop(window.scrollY > 300);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const footerSections = [
     {
       title: "New Students",
       links: [
-        { text: "Check Admission Status", href: "#" },
-        { text: "Entry Requirements", href: "#" },
-        { text: "Prospective Students", href: "#" },
-        { text: "Available Courses", href: "#" },
-        { text: "How To Apply", href: "#" },
+        { text: "Entry Requirements", href: "/entry-requirements" },
+        { text: "Prospective Students", href: "/prospective-students" },
+        { text: "Available Courses", href: "/academics/available-courses" },
+        { text: "How To Apply", href: "/how-to-apply" },
       ],
     },
     {
       title: "Quick Links",
       links: [
-        { text: "Make Enquiries", href: "#" },
-        { text: "News and More Information", href: "#" },
-        { text: "Professional Diploma in Education", href: "#" },
-        { text: "About us", href: "#" },
-        { text: "Academic Calendar", href: "#" },
-        { text: "Available Courses", href: "#" },
-        { text: "Privacy Policy", href: "#" },
+        { text: "Make Enquiries", href: "/contact" },
+        { text: "News and More Information", href: "/news" },
+        { text: "About us", href: "/about" },
+        { text: "Privacy Policy", href: "/privacy-policy" },
       ],
     },
     {
       title: "Follow us on Social Media",
       social: true,
       links: [
-        { icon: Facebook, href: "#", label: "Facebook" },
-        { icon: Instagram, href: "#", label: "Instagram" },
+        {
+          icon: Facebook,
+          href: "https://www.facebook.com/Piagetcollege/",
+          label: "Facebook",
+        },
+        {
+          icon: Instagram,
+          href: "https://www.instagram.com/piagetcoe/",
+          label: "Instagram",
+        },
       ],
     },
-  ]
+  ];
 
   return (
     <footer className="footer">
@@ -64,7 +75,7 @@ export default function Footer() {
               {section.social ? (
                 <div className="social-links">
                   {section.links.map((link, i) => {
-                    const Icon = link.icon
+                    const Icon = link.icon;
                     return (
                       <a
                         key={i}
@@ -76,14 +87,14 @@ export default function Footer() {
                       >
                         <Icon size={24} />
                       </a>
-                    )
+                    );
                   })}
                 </div>
-     ) : (
+              ) : (
                 <ul className="footer-links">
                   {section.links.map((link, i) => (
                     <li key={i}>
-                      <a href={link.href}>{'text' in link ? link.text : ''}</a>
+                      <a href={link.href}>{"text" in link ? link.text : ""}</a>
                     </li>
                   ))}
                 </ul>
@@ -133,5 +144,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

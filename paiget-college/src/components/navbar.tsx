@@ -22,10 +22,10 @@ const navItems: NavItem[] = [
       { label: "Schools", href: "/academics/schools" },
       { label: "Available Courses", href: "/academics/available-courses" },
       { label: "Sandwich Programme", href: "/academics/sandwich-programme" },
-      { label: "Academic Calendar", href: "/academics/calendar" },
+      { label: "Apply Now", href: "/apply" },
     ],
   },
-  { label: "E-LIBRARY", href: "/library" },
+  { label: "E-LIBRARY", href: "https://library.piagetcoe.edu.ng" },
   {
     label: "EVENTS",
     href: "#",

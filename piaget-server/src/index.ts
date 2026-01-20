@@ -12,6 +12,7 @@ import blogRouter from "./modules/blog/blog.route";
 import testimonialRouter from "./modules/testimonial/testimonial.route";
 import workshopRouter from "./modules/workshop/workshop.route";
 import panelRouter from "./modules/panel/panel.route";
+import applicationRouter from "./modules/application/application.route";
 // import redis from "./database/redis";
 
 const isDevelopment = config.NODE_ENV === "development";
@@ -63,6 +64,7 @@ app.use(`${BASE_PATH}/blog`, blogRouter);
 app.use(`${BASE_PATH}/testimonials`, testimonialRouter);
 app.use(`${BASE_PATH}/workshops`, workshopRouter);
 app.use(`${BASE_PATH}/panel`, panelRouter);
+app.use(`${BASE_PATH}/applications`, applicationRouter);
 
 app.use(errorHandler);
 
