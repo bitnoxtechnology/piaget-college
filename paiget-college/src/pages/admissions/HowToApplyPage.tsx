@@ -3,6 +3,7 @@
 import React from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Meta from "@/components/Meta";
 import {
   FileText,
   Clock,
@@ -16,6 +17,12 @@ import {
 } from "lucide-react";
 
 const HowToApplyPage = () => {
+  const metaTitle = "How to Apply | Piaget College of Education";
+  const metaDescription =
+    "Learn how to apply to Piaget College of Education. Follow our step-by-step application guide, placement test requirements, and important deadlines.";
+  const metaKeywords =
+    "how to apply, application process, admission steps, placement tests, JAMB, eligibility";
+
   const steps = [
     {
       number: "1",
@@ -83,6 +90,11 @@ const HowToApplyPage = () => {
 
   return (
     <div className="bg-light-850!">
+      <Meta
+        title={metaTitle}
+        description={metaDescription}
+        keywords={metaKeywords}
+      />
       <Navbar />
 
       {/* Hero Section */}

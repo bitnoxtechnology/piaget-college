@@ -7,9 +7,12 @@ import NewsEvents from "../components/newsevent";
 import YouTubeVideo from "../components/youtubevideo";
 import Footer from "../components/footer";
 import Testimonials from "../components/testimonial";
+import Meta from "@/components/Meta";
+
 function homepage() {
   return (
     <div>
+      <Meta />
       <Navbar />
       <Herosection />
       <Services />

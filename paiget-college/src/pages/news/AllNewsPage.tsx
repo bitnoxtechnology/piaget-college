@@ -8,8 +8,15 @@ import { toast } from "sonner";
 import NewsCard, { NewsCardSkeleton } from "@/components/NewsCard";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Meta from "@/components/Meta";
 
 const AllNewsPage = () => {
+  const metaTitle = "Latest News & Updates | Piaget College of Education";
+  const metaDescription =
+    "Stay updated with the latest news, announcements, and updates from Piaget College of Education. Read articles about our programs, events, and college life.";
+  const metaKeywords =
+    "news, updates, announcements, Piaget College, education news, blog, articles";
+
   const [blogs, setBlogs] = useState<IBlog[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
@@ -74,6 +81,11 @@ const AllNewsPage = () => {
 
   return (
     <div>
+      <Meta
+        title={metaTitle}
+        description={metaDescription}
+        keywords={metaKeywords}
+      />
       <Navbar />
       <div className="min-h-screen bg-linear-to-b from-white via-gray-50 to-white mt-17.5! md:mt-20!">
         {/* Hero Section */}

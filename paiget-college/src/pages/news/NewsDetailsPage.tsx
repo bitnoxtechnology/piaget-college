@@ -8,6 +8,7 @@ import { blogService } from "@/lib/services/blog-service";
 import { toast } from "sonner";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Meta from "@/components/Meta";
 
 const NewsDetailsPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -138,6 +139,14 @@ const NewsDetailsPage = () => {
 
   return (
     <div>
+      <Meta
+        title={`${blog.title} - Piaget College News`}
+        description={
+          blog.description ||
+          "Read the latest articles and news from Piaget College of Education."
+        }
+        keywords={`${blog.title}, Piaget College, news, article, blog`}
+      />
       <Navbar />
       <div className="min-h-screen bg-linear-to-b from-white to-gray-50 mt-17.5! md:mt-20!">
         {/* Hero Section */}

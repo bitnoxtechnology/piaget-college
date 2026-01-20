@@ -7,7 +7,7 @@ interface MetaProps {
 }
 
 const Meta = ({
-  title = "Piaget College",
+  title = "Piaget College of Education",
   description = "Piaget College is a leading institution offering quality education and professional development programs. Join us to advance your career and achieve your academic goals.",
   keywords = "Piaget College, education, professional development, undergraduate programs, diploma in education, courses, admissions",
 }: MetaProps) => {

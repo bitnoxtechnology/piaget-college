@@ -3,6 +3,7 @@
 import React from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Meta from "@/components/Meta";
 import {
   Heart,
   BookOpen,
@@ -107,6 +108,11 @@ const ProspectiveStudentPage = () => {
 
   return (
     <div className="bg-light-850!">
+      <Meta
+        title="Prospective Students | Piaget College of Education"
+        description="Learn about Piaget College's programs, benefits, and what we expect from our students. Discover why Piaget is the right choice for your teacher education journey."
+        keywords="prospective students, NCE programs, teacher education, student life, admissions, education"
+      />
       <Navbar />
 
       {/* Hero Section */}

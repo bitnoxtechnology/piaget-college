@@ -3,11 +3,17 @@
 import React from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Meta from "@/components/Meta";
 import { CheckCircle, AlertCircle, BookOpen } from "lucide-react";
 
 const EntryRequirementsPage = () => {
   return (
     <div className="bg-light-850!">
+      <Meta
+        title="Entry Requirements | Piaget College Admissions"
+        description="Discover the admission requirements for NCE and Pre-NCE programs at Piaget College of Education. Learn about WAEC/NECO scores, JAMB requirements, and eligibility criteria."
+        keywords="entry requirements, admission criteria, NCE admission, JAMB, WAEC, NECO, education requirements"
+      />
       <Navbar />
 
       {/* Hero Section */}
