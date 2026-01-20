@@ -1,9 +1,9 @@
-import Navbar from "../../components/navbar"
-import Footer from "../../components/footer"
-import WorkshopsHero from "./workshops-hero"
-import WorkshopCards from "./workshop-cards"
-import RSVPForm from "./rsvp-form"
-import WorkshopGallery from "./workshop-gallery"
+import Navbar from "../../components/navbar";
+import Footer from "../../components/footer";
+import WorkshopsHero from "./workshops-hero";
+import WorkshopCards from "./workshop-cards";
+// import RSVPForm from "./rsvp-form";
+import WorkshopGallery from "./workshop-gallery";
 
 function Workshopspage() {
   return (
@@ -11,11 +11,11 @@ function Workshopspage() {
       <Navbar />
       <WorkshopsHero />
       <WorkshopCards />
-      <RSVPForm />
+      {/* <RSVPForm /> */}
       <WorkshopGallery />
       <Footer />
     </div>
-  )
+  );
 }
 
-export default Workshopspage
+export default Workshopspage;

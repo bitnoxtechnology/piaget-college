@@ -2,15 +2,21 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Search, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { blogService } from "@/lib/services/blog-service";
+import {
+  Search,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Quote,
+} from "lucide-react";
+import { testimonialService } from "@/lib/services/testimonial-service";
 import { toast } from "sonner";
 import NewsCard, { NewsCardSkeleton } from "@/components/NewsCard";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
-const AllNewsPage = () => {
-  const [blogs, setBlogs] = useState<IBlog[]>([]);
+const TestimonialsPage = () => {
+  const [testimonials, setTestimonials] = useState<ITestimonial[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,13 +26,13 @@ const AllNewsPage = () => {
   const itemsPerPage = 9;
 
   useEffect(() => {
-    fetchBlogs(currentPage, searchQuery);
+    fetchTestimonials(currentPage, searchQuery);
   }, [currentPage, searchQuery]);
 
-  const fetchBlogs = async (page: number, query: string) => {
+  const fetchTestimonials = async (page: number, query: string) => {
     setLoading(true);
     try {
-      const res = await blogService.getAllBlogs({
+      const res = await testimonialService.getAllTestimonials({
         page,
         limit: itemsPerPage,
         isPublished: true,
@@ -34,24 +40,18 @@ const AllNewsPage = () => {
       });
 
       if (res.success && res.data) {
-        setBlogs(res.data.blogs);
+        setTestimonials(res.data.testimonials);
         setTotal(res.data.total);
         setTotalPages(res.data.totalPages);
       } else {
         toast.error("Failed to fetch news articles");
       }
     } catch (error) {
-      console.error("Error fetching blogs:", error);
+      console.error("Error fetching testimonials:", error);
       toast.error("An error occurred while fetching news");
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setCurrentPage(1);
-    fetchBlogs(1, searchQuery);
   };
 
   const handlePageChange = (newPage: number) => {
@@ -91,40 +91,13 @@ const AllNewsPage = () => {
               transition={{ delay: 0.2, duration: 0.6 }}
             >
               <h1 className="text-5xl lg:text-6xl font-bold mb-4!">
-                Latest News & Updates
+                What Our Alumni Are Saying
               </h1>
               <p className="text-lg lg:text-xl text-red-100 max-w-3xl mx-auto!">
-                Stay informed with the latest announcements, events, and
-                insights from Piaget College
+                Hear directly from our alumni about their experiences and how
+                Piaget College has impacted their careers and lives.
               </p>
             </motion.div>
-
-            {/* Search Bar */}
-            <motion.form
-              onSubmit={handleSearch}
-              className="mt-12! max-w-2xl mx-auto!"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-            >
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search news articles..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-6! py-4! pl-12! rounded-full bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-300 shadow-lg transition-all duration-300"
-                />
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <button
-                  type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primarytext-primary-100 hover:bg-primary-300 text-white px-6! py-2! rounded-full font-semibold transition-colors duration-300 flex items-center gap-2"
-                >
-                  <span>Search</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </motion.form>
           </div>
         </motion.section>
 
@@ -132,7 +105,7 @@ const AllNewsPage = () => {
         <section className="py-16! lg:py-20!">
           <div className="max-w-7xl mx-auto! px-4! sm:px-6! lg:px-8!">
             {/* Results Info */}
-            {!loading && blogs.length > 0 && (
+            {!loading && testimonials.length > 0 && (
               <motion.div
                 className="mb-8!"
                 initial={{ opacity: 0, y: -10 }}
@@ -156,7 +129,7 @@ const AllNewsPage = () => {
               </motion.div>
             )}
 
-            {/* News Grid */}
+            {/* Testimonials Grid */}
             {loading ? (
               <motion.div
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -168,22 +141,47 @@ const AllNewsPage = () => {
                   <NewsCardSkeleton key={i} index={i} />
                 ))}
               </motion.div>
-            ) : blogs.length > 0 ? (
+            ) : testimonials.length > 0 ? (
               <motion.div
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
               >
-                {blogs.map((blog) => (
-                  <div key={blog._id}>
-                    <NewsCard
-                      title={blog.title}
-                      excerpt={blog.excerpt}
-                      coverImage={blog.coverImage as string}
-                      slug={blog.slug}
-                    />
-                  </div>
+                {testimonials.map((testimonial, index) => (
+                  <motion.div
+                    key={testimonial._id}
+                    className="testimonial-card"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="quote-icon">
+                      <Quote size={28} strokeWidth={2.5} />
+                    </div>
+
+                    <div className="testimonial-content">
+                      <p className="testimonial-text">
+                        "{testimonial.content}"
+                      </p>
+                    </div>
+
+                    <div className="testimonial-footer">
+                      <div className="testimonial-avatar">
+                        <img
+                          src={testimonial.image || "/placeholder.svg"}
+                          alt={testimonial.name}
+                        />
+                      </div>
+                      <div className="testimonial-info">
+                        <h4 className="testimonial-name">{testimonial.name}</h4>
+                        <p className="testimonial-role">
+                          {testimonial.position}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
                 ))}
               </motion.div>
             ) : (
@@ -196,24 +194,8 @@ const AllNewsPage = () => {
                   <Search className="w-10 h-10 text-primary-100" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2!">
-                  No Articles Found
+                  No Testimonials Found
                 </h3>
-                <p className="text-gray-600 mb-6!">
-                  {searchQuery
-                    ? `No results found for "${searchQuery}". Try a different search.`
-                    : "No news articles available at the moment."}
-                </p>
-                {searchQuery && (
-                  <button
-                    onClick={() => {
-                      setSearchQuery("");
-                      setCurrentPage(1);
-                    }}
-                    className="inline-flex items-center gap-2 px-6! py-3! bg-primarytext-primary-100 hover:bg-primary-300 text-white font-semibold rounded-lg transition-colors duration-300"
-                  >
-                    Clear Search
-                  </button>
-                )}
               </motion.div>
             )}
 
@@ -266,47 +248,10 @@ const AllNewsPage = () => {
             )}
           </div>
         </section>
-
-        {/* Stats Section */}
-        {!loading && blogs.length > 0 && (
-          <motion.section
-            className="py-16! bg-linear-to-r from-primarytext-primary-100/5 to-primary-300/5"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <div className="max-w-7xl mx-auto! px-4! sm:px-6! lg:px-8!">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                  { label: "Total Articles", value: total },
-                  {
-                    label: "Current Page",
-                    value: `${currentPage} of ${totalPages}`,
-                  },
-                  { label: "Articles Per Page", value: itemsPerPage },
-                ].map((stat, i) => (
-                  <motion.div
-                    key={i}
-                    className="text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                  >
-                    <div className="text-4xl font-bold text-primary-100 mb-2!">
-                      {stat.value}
-                    </div>
-                    <p className="text-gray-600">{stat.label}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.section>
-        )}
       </div>
       <Footer />
     </div>
   );
 };
 
-export default AllNewsPage;
+export default TestimonialsPage;

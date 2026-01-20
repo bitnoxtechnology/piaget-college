@@ -6,10 +6,14 @@ export const contactUsFormTemplate = ({
   name,
   email,
   message,
+  phone,
+  subject,
 }: {
   name: string;
   email: string;
   message: string;
+  phone: string;
+  subject: string;
 }) => ({
   to: "info@bitnoxsolution.com",
   subject: `New Contact Message from ${name}`,
@@ -18,6 +22,8 @@ You have received a new message via Contact Us form on (${clientOrigin}).
 
 Name: ${name}
 Email: ${email}
+Phone: ${phone}
+Subject: ${subject}
 Message:
 ${message}
   `,
@@ -85,6 +91,12 @@ ${message}
 
             <div class="label">Sender Email:</div>
             <div class="value">${email}</div>
+
+            <div class="label">Phone:</div>
+            <div class="value">${phone}</div>
+
+            <div class="label">Subject:</div>
+            <div class="value">${subject}</div>
 
             <div class="label">Message:</div>
             <div class="value">${message.replace(/\n/g, "<br/>")}</div>

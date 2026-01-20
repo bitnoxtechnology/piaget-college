@@ -7,15 +7,21 @@ export class EmailService {
     name,
     email,
     message,
+    phone,
+    subject,
   }: {
     name: string;
     email: string;
     message: string;
+    phone: string;
+    subject: string;
   }): Promise<void> => {
     const emailContent = contactUsFormTemplate({
       name,
       email,
       message,
+      phone,
+      subject,
     });
 
     const sendResult = await sendEmail({ ...emailContent, replyTo: email });

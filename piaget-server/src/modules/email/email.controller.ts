@@ -13,9 +13,9 @@ export class EmailController {
 
   public sendContactUsEmail = asyncHandler(
     async (req: Request, res: Response) => {
-      const { name, email, message } = req.body;
+      const { name, email, phone, subject, message } = req.body;
 
-      if (!name || !email || !message) {
+      if (!name || !email || !message || !phone || !subject) {
         throw new BadRequestException("All fields are required");
       }
 
@@ -23,10 +23,13 @@ export class EmailController {
         name,
         email,
         message,
+        phone,
+        subject,
       });
 
       return res.status(HTTPSTATUSCODE.OK).json({
         message: "Contact us email sent successfully",
+        success: true,
       });
     }
   );

@@ -1,24 +1,13 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "../styles/newsevent.css";
-import News1 from "../assets/news1.jpg";
-import News2 from "../assets/news2.webp";
-import News3 from "../assets/new3.webp";
 import { blogService } from "@/lib/services/blog-service";
 import { toast } from "sonner";
 import NewsCard, { NewsCardSkeleton } from "./NewsCard";
 import { Link } from "react-router-dom";
-
-interface NewsItem {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
-  link: string;
-}
 
 const NewsEvents = () => {
   const [posts, setPosts] = useState<IBlog[]>([]);
@@ -115,7 +104,7 @@ const NewsEvents = () => {
         </div>
 
         {/* CTA Button */}
-        {posts.length > 0 && (
+        {posts.length > 3 && (
           <motion.div
             className="mt-12! text-center"
             initial={{ opacity: 0, y: 20 }}

@@ -37,6 +37,7 @@ import CreateWorkshopPage from "./pages/admin/create-workshop/CreateWorkshopPage
 import AdminWorkshopsPage from "./pages/admin/workshops/AdminWorkshopsPage";
 import AllNewsPage from "./pages/news/AllNewsPage";
 import NewsDetailsPage from "./pages/news/NewsDetailsPage";
+import TestimonialsPage from "./pages/testimonials/TestimonialsPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -83,6 +84,8 @@ function AppContent() {
 
         <Route path="/news" element={<AllNewsPage />} />
         <Route path="/news/:slug" element={<NewsDetailsPage />} />
+
+        <Route path="/testimonials" element={<TestimonialsPage />} />
 
         <Route element={<AuthRoutes />}>
           <Route element={<AuthLayout />} path="/auth">
