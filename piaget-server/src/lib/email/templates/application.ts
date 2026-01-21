@@ -39,7 +39,7 @@ export const applicationFormTemplate = ({
   sourceOfInformation: string;
   otherSourceDetails?: string;
 }) => ({
-  to: "info@bitnoxsolution.com",
+  to: "info@piagetcoe.edu.ng",
   subject: `New Application Submission from ${firstname} ${surname}`,
   text: `
 You have received a new application submission via the Application Form on (${clientOrigin}).

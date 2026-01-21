@@ -46,7 +46,7 @@ const ContactForm = () => {
       } catch (error: any) {
         console.log(error);
         toast.error(
-          "Failed to send message. Please try again later or contact us directly at info@bitnoxsolution.com."
+          "Failed to send message. Please try again later or contact us directly at info@piagetcoe.edu.ng."
         );
       }
     });

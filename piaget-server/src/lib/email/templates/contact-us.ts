@@ -15,7 +15,7 @@ export const contactUsFormTemplate = ({
   phone: string;
   subject: string;
 }) => ({
-  to: "info@bitnoxsolution.com",
+  to: "info@piagetcoe.edu.ng",
   subject: `New Contact Message from ${name}`,
   text: `
 You have received a new message via Contact Us form on (${clientOrigin}).
