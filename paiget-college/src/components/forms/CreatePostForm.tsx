@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 
@@ -37,7 +37,7 @@ const CreatePostForm: React.FC = () => {
       title: "",
       excerpt: "",
       contentHtml: "",
-      coverImage: undefined,
+      coverImage: "",
       images: [],
       videos: [],
       tags: [],
@@ -47,22 +47,13 @@ const CreatePostForm: React.FC = () => {
 
   const QuillModules = useMemo(() => quillModules, []);
 
-  const onSubmit = async (data: CreateBlogInput) => {
+  const onSubmit: SubmitHandler<CreateBlogInput> = async (data) => {
     setIsSubmitting(true);
+
     try {
       const res = await blogService.createBlog(data);
       if (res.success) {
         toast.success("Post created successfully!");
-        createForm.reset({
-          title: "",
-          excerpt: "",
-          contentHtml: "",
-          coverImage: undefined,
-          images: [],
-          videos: [],
-          tags: [],
-          isPublished: false,
-        });
         navigate("/admin/posts");
       }
     } catch (error) {

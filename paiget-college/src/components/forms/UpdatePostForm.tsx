@@ -142,7 +142,7 @@ const UpdatePostForm: React.FC = () => {
             <Field data-invalid={fieldState.invalid}>
               <FieldLabel htmlFor="contentHtml">Content</FieldLabel>
               <QuillEditor
-                value={field.value}
+                value={field.value as string}
                 onChange={field.onChange}
                 modules={QuillModules}
               />

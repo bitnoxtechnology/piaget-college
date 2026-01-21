@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Calendar, User, Share2, ArrowLeft, Clock, Tag } from "lucide-react";
+import { Calendar, Share2, ArrowLeft, Clock, Tag } from "lucide-react";
 import { blogService } from "@/lib/services/blog-service";
 import { toast } from "sonner";
 import Navbar from "@/components/navbar";
@@ -142,7 +142,7 @@ const NewsDetailsPage = () => {
       <Meta
         title={`${blog.title} - Piaget College News`}
         description={
-          blog.description ||
+          blog.excerpt ||
           "Read the latest articles and news from Piaget College of Education."
         }
         keywords={`${blog.title}, Piaget College, news, article, blog`}

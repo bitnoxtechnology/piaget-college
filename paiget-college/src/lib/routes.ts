@@ -4,10 +4,17 @@ import {
   Dock,
   LayoutDashboardIcon,
   AppWindow,
-  Settings,
 } from "lucide-react";
 
-export const dashboardRoutes = [
+type DashboardRoute = {
+  label: string;
+  route: string;
+  icon: React.ComponentType<{ className?: string }>;
+  subMenu: boolean;
+  subMenuItems: { label: string; route: string }[];
+};
+
+export const dashboardRoutes: DashboardRoute[] = [
   {
     label: "Overview",
     route: "/admin/overview",
