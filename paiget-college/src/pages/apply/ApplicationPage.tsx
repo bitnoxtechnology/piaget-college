@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, type Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 
@@ -29,7 +29,7 @@ const ApplicationPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ApplicationFormType>({
-    resolver: zodResolver(applicationSchema),
+    resolver: zodResolver(applicationSchema) as Resolver<ApplicationFormType>,
     mode: "onChange",
     defaultValues: {
       paymentReferenceCode: "",

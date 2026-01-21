@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import {
+  useForm,
+  Controller,
+  type SubmitHandler,
+  type Resolver,
+} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 
@@ -29,17 +34,19 @@ const CreateTestimonialForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const createForm = useForm<CreateTestimonialInput>({
-    resolver: zodResolver(testimonialSchema),
+    resolver: zodResolver(
+      testimonialSchema
+    ) as Resolver<CreateTestimonialInput>,
     defaultValues: {
       name: "",
       content: "",
-      image: undefined,
+      image: "",
       position: "",
       isPublished: false,
     },
   });
 
-  const onSubmit = async (data: CreateTestimonialInput) => {
+  const onSubmit: SubmitHandler<CreateTestimonialInput> = async (data) => {
     setIsSubmitting(true);
     try {
       const res = await testimonialService.createTestimonial(data);

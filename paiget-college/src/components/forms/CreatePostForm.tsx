@@ -1,5 +1,10 @@
 import React, { useMemo, useState } from "react";
-import { useForm, Controller, type SubmitHandler } from "react-hook-form";
+import {
+  useForm,
+  Controller,
+  type SubmitHandler,
+  type Resolver,
+} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 
@@ -32,7 +37,7 @@ const CreatePostForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const createForm = useForm<CreateBlogInput>({
-    resolver: zodResolver(blogSchema),
+    resolver: zodResolver(blogSchema) as Resolver<CreateBlogInput>,
     defaultValues: {
       title: "",
       excerpt: "",
