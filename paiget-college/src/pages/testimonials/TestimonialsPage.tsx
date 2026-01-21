@@ -2,16 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Search,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-  Quote,
-} from "lucide-react";
+import { Search, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { testimonialService } from "@/lib/services/testimonial-service";
-import { toast } from "sonner";
-import NewsCard, { NewsCardSkeleton } from "@/components/NewsCard";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
@@ -43,12 +35,10 @@ const TestimonialsPage = () => {
         setTestimonials(res.data.testimonials);
         setTotal(res.data.total);
         setTotalPages(res.data.totalPages);
-      } else {
-        toast.error("Failed to fetch news articles");
       }
     } catch (error) {
       console.error("Error fetching testimonials:", error);
-      toast.error("An error occurred while fetching news");
+      // toast.error("An error occurred while fetching news");
     } finally {
       setLoading(false);
     }
@@ -138,7 +128,7 @@ const TestimonialsPage = () => {
                 animate="visible"
               >
                 {[...Array(9)].map((_, i) => (
-                  <NewsCardSkeleton key={i} index={i} />
+                  <div key={i} className="h-78 w-90"></div>
                 ))}
               </motion.div>
             ) : testimonials.length > 0 ? (

@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Quote } from "lucide-react";
 import "../styles/testimonial.css";
-import { toast } from "sonner";
 import { testimonialService } from "@/lib/services/testimonial-service";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -29,7 +28,7 @@ function Testimonials() {
       }
     } catch (error) {
       console.error("Error fetching testimonials:", error);
-      toast.error("Failed to fetch testimonials.");
+      // toast.error("Failed to fetch testimonials.");
     } finally {
       setLoading(false);
     }

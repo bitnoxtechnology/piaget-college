@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import SecondaryLogo from "../assets/logo2.png";
 import "../styles/navbar.css";
+import { useAuth } from "@/hooks/use-auth";
 
 interface NavItem {
   label: string;
@@ -41,6 +42,8 @@ const navItems: NavItem[] = [
 ];
 
 export default function Navbar() {
+  const { user } = useAuth();
+
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -70,9 +73,16 @@ export default function Navbar() {
   const whatToRender = (item: NavItem) => {
     if (item.href === "/admin/overview") {
       return (
-        <Link to={item.href} className="nav-link bg-primary-100 text-white!">
-          Dashboard
-        </Link>
+        <>
+          {user && (
+            <Link
+              to={item.href}
+              className="nav-link bg-primary-100 text-white!"
+            >
+              Dashboard
+            </Link>
+          )}
+        </>
       );
     } else
       return (

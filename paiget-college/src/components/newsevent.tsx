@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "../styles/newsevent.css";
 import { blogService } from "@/lib/services/blog-service";
-import { toast } from "sonner";
 import NewsCard, { NewsCardSkeleton } from "./NewsCard";
 import { Link } from "react-router-dom";
 
@@ -30,7 +29,7 @@ const NewsEvents = () => {
       }
     } catch (error) {
       console.error("Error fetching posts:", error);
-      toast.error("Failed to fetch posts.");
+      // toast.error("Failed to fetch posts.");
     } finally {
       setLoading(false);
     }
