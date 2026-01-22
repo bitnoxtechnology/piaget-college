@@ -153,7 +153,7 @@ const UpdatePostForm: React.FC = () => {
         <Controller
           name="coverImage"
           control={updateForm.control}
-          render={({ field }) => (
+          render={({ field, fieldState }) => (
             <Field>
               <FieldLabel>Cover Image</FieldLabel>
               <ImageUpload
@@ -163,6 +163,7 @@ const UpdatePostForm: React.FC = () => {
                 maxFiles={1}
                 label="Upload Cover Image"
               />
+              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
           )}
         />

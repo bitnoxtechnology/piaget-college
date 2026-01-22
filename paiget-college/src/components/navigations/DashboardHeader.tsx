@@ -14,7 +14,7 @@ const DashboardHeader = () => {
         <div className="dashboard-header__search">
           <div className="flex items-center gap-4">
             <div className="relative group">
-              <Link to="/posts" className="flex gap-3 items-center">
+              <Link to="/news" className="flex gap-3 items-center">
                 <span className="font-bold">Posts</span>
                 <BookOpen />
               </Link>

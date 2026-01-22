@@ -147,7 +147,7 @@ const UpdateTestimonialForm: React.FC = () => {
         <Controller
           name="image"
           control={updateForm.control}
-          render={({ field }) => (
+          render={({ field, fieldState }) => (
             <Field>
               <FieldLabel>Testifier Image</FieldLabel>
               <ImageUpload
@@ -157,6 +157,7 @@ const UpdateTestimonialForm: React.FC = () => {
                 maxFiles={1}
                 label="Upload Image"
               />
+              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
           )}
         />
