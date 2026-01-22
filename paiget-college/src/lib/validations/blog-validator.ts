@@ -6,7 +6,7 @@ export const blogSchema = z.object({
   contentHtml: z
     .string()
     .min(100, "Content must be at least 100 characters long"),
-  coverImage: z.url().optional(),
+  coverImage: z.string().optional(),
   images: z.array(z.url()).optional(),
   videos: z.array(z.url()).optional(),
   tags: z.array(z.string()).optional(),

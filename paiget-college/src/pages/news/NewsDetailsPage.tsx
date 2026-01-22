@@ -206,7 +206,7 @@ const NewsDetailsPage = () => {
                   <p className="text-sm font-semibold text-gray-900 capitalize">
                     {blog.author.name}
                   </p>
-                  <p className="text-xs text-gray-500">{blog.author.email}</p>
+                  {/* <p className="text-xs text-gray-500">{blog.author.email}</p> */}
                 </div>
               </div>
 
@@ -281,7 +281,7 @@ const NewsDetailsPage = () => {
         </motion.section>
 
         {/* Author Info Section */}
-        <motion.section
+        {/* <motion.section
           className="bg-linear-to-r from-primarybg-primary-100/10 to-primary-300/10 p-8! lg:p-12! my-12!"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -308,7 +308,7 @@ const NewsDetailsPage = () => {
               </p>
             </div>
           </div>
-        </motion.section>
+        </motion.section> */}
 
         {/* CTA Section */}
         <motion.section
