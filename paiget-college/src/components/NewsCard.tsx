@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import coverPlaceholder from "../assets/cover-placeholder.png";
 
 const NewsCard = ({
   title,
@@ -19,7 +20,7 @@ const NewsCard = ({
       {/* Image Wrapper */}
       <div className="relative h-56 overflow-hidden bg-gray-100">
         <img
-          src={coverImage || "/placeholder.svg"}
+          src={coverImage || coverPlaceholder}
           alt={title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />

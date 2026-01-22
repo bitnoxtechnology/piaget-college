@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Meta from "@/components/Meta";
+import coverPlaceholder from "@/assets/cover-placeholder.png";
 
 const NewsDetailsPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -157,7 +158,7 @@ const NewsDetailsPage = () => {
           transition={{ duration: 0.5 }}
         >
           {/* Back Button */}
-          <div className="max-w-4xl mx-auto p-6! lg:p-8!">
+          <div className="max-w-4xl mx-auto! p-6! lg:p-8!">
             <motion.button
               onClick={handleGoBack}
               className="inline-flex items-center gap-2 text-primarybg-primary-100 hover:text-primary-300 font-semibold m-b-6 transition-colors duration-300 group"
@@ -176,7 +177,7 @@ const NewsDetailsPage = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <img
-              src={blog.coverImage || "/placeholder.svg"}
+              src={blog.coverImage || coverPlaceholder}
               alt={blog.title}
               className="w-full h-96 lg:h-125 object-cover rounded-2xl shadow-2xl"
             />

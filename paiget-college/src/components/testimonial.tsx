@@ -6,6 +6,7 @@ import "../styles/testimonial.css";
 import { testimonialService } from "@/lib/services/testimonial-service";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import userPlaceholder from "../assets/user.png";
 
 function Testimonials() {
   const [testimonials, setTestimonials] = useState<ITestimonial[]>([]);
@@ -76,7 +77,7 @@ function Testimonials() {
                   <div className="testimonial-footer">
                     <div className="testimonial-avatar">
                       <img
-                        src={testimonial.image || "/placeholder.svg"}
+                        src={testimonial.image || userPlaceholder}
                         alt={testimonial.name}
                       />
                     </div>

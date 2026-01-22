@@ -79,7 +79,7 @@ const SignupForm: React.FC<Props> = ({ onSuccess }) => {
                     id="name"
                     placeholder="John Doe"
                     aria-invalid={fieldState.invalid}
-                    className="ps-10!"
+                    className="ps-10! text-white"
                     disabled={isLoading}
                     autoComplete="name"
                   />
@@ -109,7 +109,7 @@ const SignupForm: React.FC<Props> = ({ onSuccess }) => {
                     type="email"
                     placeholder="you@example.com"
                     aria-invalid={fieldState.invalid}
-                    className="pl-10!"
+                    className="pl-10! text-white"
                     disabled={isLoading}
                     autoComplete="email"
                   />

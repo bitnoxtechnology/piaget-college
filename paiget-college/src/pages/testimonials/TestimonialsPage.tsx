@@ -6,6 +6,7 @@ import { Search, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { testimonialService } from "@/lib/services/testimonial-service";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import userPlacehoder from "@/assets/user.png";
 
 const TestimonialsPage = () => {
   const [testimonials, setTestimonials] = useState<ITestimonial[]>([]);
@@ -160,7 +161,7 @@ const TestimonialsPage = () => {
                     <div className="testimonial-footer">
                       <div className="testimonial-avatar">
                         <img
-                          src={testimonial.image || "/placeholder.svg"}
+                          src={testimonial.image || userPlacehoder}
                           alt={testimonial.name}
                         />
                       </div>
