@@ -22,7 +22,6 @@ import GalleryPage from "./pages/gallery/gallery";
 import { Toaster } from "sonner";
 import AuthRoutes from "./protected/AuthRoutes";
 import AuthLayout from "./layout/AuthLayout";
-import Signup from "./pages/auth/Signup";
 import Login from "./pages/auth/Login";
 import ProtectedRoutes from "./protected/ProtectedRoutes";
 import DashboardLayout from "./layout/DashboardLayout";
@@ -60,11 +59,13 @@ function AppContent() {
   const location = useLocation();
 
   useEffect(() => {
-    setLoading(true);
-
-    const timer = setTimeout(() => setLoading(false), 800);
-    return () => clearTimeout(timer);
-  }, [location]);
+    const startTimer = setTimeout(() => setLoading(true), 0);
+    const endTimer = setTimeout(() => setLoading(false), 800);
+    return () => {
+      clearTimeout(startTimer);
+      clearTimeout(endTimer);
+    };
+  }, [location, setLoading]);
 
   return (
     <>
@@ -106,7 +107,6 @@ function AppContent() {
 
         <Route element={<AuthRoutes />}>
           <Route element={<AuthLayout />} path="/auth">
-            <Route path="signup" element={<Signup />} />
             <Route path="login" element={<Login />} />
           </Route>
         </Route>

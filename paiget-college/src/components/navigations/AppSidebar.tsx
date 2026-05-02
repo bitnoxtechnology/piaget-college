@@ -49,17 +49,15 @@ function AppSidebar() {
     <>
       <Sidebar collapsible="icon" className="border-r min-h-screen p-6!">
         <SidebarHeader className="pt-0! bg-card">
-          <div className="flex h-15 gap-2 items-center justify-between">
+          <div className="flex h-15 gap-2 items-center justify-between group-data-[collapsible=icon]:justify-center">
             <div className="flex items-center gap-2 group-data-[collapsible=icon]:hidden">
               <SiteLogo showRightLogo />
             </div>
 
-            <div className="flex justify-center group-data-[collapsible=icon]:w-full">
-              <PanelLeft
-                onClick={() => toggleSidebar()}
-                className="text-muted-foreground cursor-pointer hover:text-foreground w-5 h-5"
-              />
-            </div>
+            <PanelLeft
+              onClick={() => toggleSidebar()}
+              className="text-muted-foreground cursor-pointer hover:text-foreground w-5 h-5 shrink-0"
+            />
           </div>
         </SidebarHeader>
         <SidebarContent className="bg-card">
