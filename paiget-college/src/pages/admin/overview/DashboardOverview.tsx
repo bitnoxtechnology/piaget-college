@@ -153,18 +153,30 @@ const DashboardOverview = () => {
             Quick Actions
           </h2>
           <div className="space-y-3!">
-            <button className="w-full px-4! py-3! bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200">
-              <Link to="/admin/create-workshop">Create Workshop</Link>
-            </button>
-            <button className="w-full px-4! py-3! bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200">
-              <Link to="/admin/posts">Manage Posts</Link>
-            </button>
-            <button className="w-full px-4! py-3! bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors duration-200">
-              <Link to="/admin/create-testimonial">Add Testimonial</Link>
-            </button>
-            <button className="w-full px-4! py-3! bg-gray-600 hover:bg-gray-700 text-white font-medium rounded-lg transition-colors duration-200">
-              <Link to="/admin/applications">View Applications</Link>
-            </button>
+            <Link
+              to="/admin/create-workshop"
+              className="w-full block px-4! py-3! bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 text-center"
+            >
+              Create Workshop
+            </Link>
+            <Link
+              to="/admin/posts"
+              className="w-full block px-4! py-3! bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200 text-center"
+            >
+              Manage Posts
+            </Link>
+            <Link
+              to="/admin/create-testimonial"
+              className="w-full block px-4! py-3! bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors duration-200 text-center"
+            >
+              Add Testimonial
+            </Link>
+            <Link
+              to="/admin/applications"
+              className="w-full block px-4! py-3! bg-gray-600 hover:bg-gray-700 text-white font-medium rounded-lg transition-colors duration-200 text-center"
+            >
+              View Applications
+            </Link>
           </div>
         </div>
       </div>

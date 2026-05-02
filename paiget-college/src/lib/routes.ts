@@ -1,9 +1,9 @@
 import {
-  Banknote,
   BookOpen,
-  Dock,
   LayoutDashboardIcon,
-  AppWindow,
+  CalendarDays,
+  MessageSquare,
+  ClipboardList,
 } from "lucide-react";
 
 type DashboardRoute = {
@@ -32,21 +32,21 @@ export const dashboardRoutes: DashboardRoute[] = [
   {
     label: "Testimonials",
     route: "/admin/testimonials",
-    icon: Dock,
+    icon: MessageSquare,
     subMenu: false,
     subMenuItems: [],
   },
   {
     label: "Workshops",
     route: "/admin/workshops",
-    icon: Banknote,
+    icon: CalendarDays,
     subMenu: false,
     subMenuItems: [],
   },
   {
     label: "Applications",
     route: "/admin/applications",
-    icon: AppWindow,
+    icon: ClipboardList,
     subMenu: false,
     subMenuItems: [],
   },

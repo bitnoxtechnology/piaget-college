@@ -2,25 +2,22 @@
 
 import React from "react";
 import { useSidebar } from "@/components/ui/sidebar";
-import { BookOpen, Menu } from "lucide-react";
+import { ExternalLink, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const DashboardHeader = () => {
   const { toggleSidebar } = useSidebar();
 
   return (
-    <div className="w-full mb-6! px-4! sm:px-8! pt-4! z-10">
-      <div className="flex justify-between items-center w-full my-3">
-        <div className="dashboard-header__search">
-          <div className="flex items-center gap-4">
-            <div className="relative group">
-              <Link to="/news" className="flex gap-3 items-center">
-                <span className="font-bold">Posts</span>
-                <BookOpen />
-              </Link>
-            </div>
-          </div>
-        </div>
+    <div className="w-full px-4! sm:px-8! py-3! border-b z-10">
+      <div className="flex justify-between items-center w-full">
+        <Link
+          to="/"
+          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <ExternalLink size={14} />
+          <span>View Site</span>
+        </Link>
 
         <div className="flex items-center gap-4">
           <div className="md:hidden">
@@ -31,7 +28,7 @@ const DashboardHeader = () => {
               data-sidebar="trigger"
               onClick={() => toggleSidebar()}
             >
-              <Menu className="" />
+              <Menu />
             </button>
           </div>
         </div>
