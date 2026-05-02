@@ -175,10 +175,10 @@ function AppSidebar() {
                   </SidebarMenuButton>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
-                  className="w-[--radix-dropdown-menu-trigger-width] min-w-56 border-none rounded-lg bg-card text-card-foreground"
-                  side={"bottom"}
+                  className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg shadow-lg border border-border bg-card text-card-foreground"
+                  side="top"
                   align="start"
-                  sideOffset={4}
+                  sideOffset={8}
                 >
                   <DropdownMenuItem
                     onClick={() => setIsOpen(true)}
