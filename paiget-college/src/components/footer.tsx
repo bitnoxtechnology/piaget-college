@@ -1,5 +1,4 @@
-"use client";
-
+import { useState, useEffect } from "react";
 import {
   Facebook,
   Instagram,
@@ -8,8 +7,7 @@ import {
   MapPin,
   ArrowUp,
 } from "lucide-react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/footer.css";
 
 export default function Footer() {
@@ -94,7 +92,7 @@ export default function Footer() {
                 <ul className="footer-links">
                   {section.links.map((link, i) => (
                     <li key={i}>
-                      <a href={link.href}>{"text" in link ? link.text : ""}</a>
+                      <Link to={link.href}>{"text" in link ? link.text : ""}</Link>
                     </li>
                   ))}
                 </ul>
@@ -133,7 +131,7 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="footer-bottom">
-          <p>&copy; 2025 PIAGET College of Education. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} PIAGET College of Education. All rights reserved.</p>
           <button
             className={`scroll-top-btn ${showScrollTop ? "visible" : ""}`}
             onClick={scrollToTop}

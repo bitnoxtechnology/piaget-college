@@ -1,8 +1,7 @@
-"use client"
-
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { Link } from "react-router-dom"
 import "../styles/herosection.css"
 import Hero1 from "../assets/Hero1.jpeg"
 import Hero2 from "../assets/Hero2.jpeg"
@@ -52,6 +51,7 @@ function AnimatedText({ text }: { text: string }) {
 export default function HeroSection() {
   const [current, setCurrent] = useState(0)
   const [autoplay, setAutoplay] = useState(true)
+  const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     if (!autoplay) return
@@ -63,22 +63,25 @@ export default function HeroSection() {
     return () => clearInterval(interval)
   }, [autoplay])
 
+  const pauseAndResume = () => {
+    setAutoplay(false)
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current)
+    resumeTimerRef.current = setTimeout(() => setAutoplay(true), 8000)
+  }
+
   const goToSlide = (index: number) => {
     setCurrent(index)
-    setAutoplay(false)
-    setTimeout(() => setAutoplay(true), 8000)
+    pauseAndResume()
   }
 
   const nextSlide = () => {
     setCurrent((prev) => (prev + 1) % slides.length)
-    setAutoplay(false)
-    setTimeout(() => setAutoplay(true), 8000)
+    pauseAndResume()
   }
 
   const prevSlide = () => {
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length)
-    setAutoplay(false)
-    setTimeout(() => setAutoplay(true), 8000)
+    pauseAndResume()
   }
 
   return (
@@ -126,12 +129,12 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
               >
-                <a href="/academics/available-courses" className="hero-btn hero-btn-primary">
+                <Link to="/academics/available-courses" className="hero-btn hero-btn-primary">
                   Explore Programs
-                </a>
-                <a href="/apply" className="hero-btn hero-btn-secondary">
+                </Link>
+                <Link to="/apply" className="hero-btn hero-btn-secondary">
                   Apply Now
-                </a>
+                </Link>
               </motion.div>
             </motion.div>
           </motion.div>

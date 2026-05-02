@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -22,32 +21,34 @@ const NewsCard = ({
         <img
           src={coverImage || coverPlaceholder}
           alt={title}
+          loading="lazy"
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-linear-to from-transparent via-transparent to-black/30 group-hover:to-black/50 transition-all duration-300"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-black/30 group-hover:to-black/50 transition-all duration-300"></div>
       </div>
 
       {/* Content */}
-      <div className="p-6! flex flex-col">
+      <div className="p-6 flex flex-col">
         {/* Title */}
-        <h3 className="text-lg font-bold text-gray-900 line-clamp-2 mb-3! group-hover:text-blue-600 transition-colors duration-300">
+        <h3 className="text-lg font-bold text-gray-900 line-clamp-2 mb-3 group-hover:text-primary-100 transition-colors duration-300">
           {title}
         </h3>
 
         {/* Excerpt */}
-        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4! grow">
+        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4 grow">
           {excerpt}
         </p>
 
-        {/* Button */}
-        <Link to={`/news/${slug}`}>
-          <button className="inline-flex items-center gap-2 cursor-pointer text-primary-200 hover:text-primary font-semibold text-sm group/btn transition-all duration-300">
-            <span>Read More</span>
-            <ArrowRight
-              size={18}
-              className="group-hover/btn:translate-x-1 transition-transform duration-300"
-            />
-          </button>
+        {/* Link styled as button */}
+        <Link
+          to={`/news/${slug}`}
+          className="inline-flex items-center gap-2 text-primary-200 hover:text-primary-100 font-semibold text-sm group/btn transition-all duration-300"
+        >
+          <span>Read More</span>
+          <ArrowRight
+            size={18}
+            className="group-hover/btn:translate-x-1 transition-transform duration-300"
+          />
         </Link>
       </div>
     </div>
@@ -65,10 +66,10 @@ export const NewsCardSkeleton = ({ index = 0 }: { index?: number }) => {
       transition={{ delay: index * 0.1 }}
     >
       {/* Image Skeleton */}
-      <div className="w-full h-56 bg-linear-to-r from-gray-200 via-gray-100 to-gray-200 animate-pulse"></div>
+      <div className="w-full h-56 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-pulse"></div>
 
       {/* Content Skeleton */}
-      <div className="p-6! space-y-4 h-80 flex flex-col">
+      <div className="p-6 space-y-4 h-80 flex flex-col">
         {/* Title Skeleton */}
         <div className="space-y-2">
           <div className="h-5 bg-gray-200 rounded-lg w-full animate-pulse"></div>
@@ -83,7 +84,7 @@ export const NewsCardSkeleton = ({ index = 0 }: { index?: number }) => {
         </div>
 
         {/* Button Skeleton */}
-        <div className="pt-2!">
+        <div className="pt-2">
           <div className="h-5 bg-gray-200 rounded-lg w-28 animate-pulse"></div>
         </div>
       </div>

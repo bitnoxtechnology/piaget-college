@@ -1,4 +1,5 @@
 import { Phone, ArrowRight } from "lucide-react"
+import { Link } from "react-router-dom"
 import "../styles/programmeinfo.css"
 
 const ProgrammeInfo = () => {
@@ -28,13 +29,13 @@ const ProgrammeInfo = () => {
         </div>
 
         <div className="programme-actions">
-          <a href="/academics/available-courses" className="programme-btn programme-btn-primary">
+          <Link to="/academics/available-courses" className="programme-btn programme-btn-primary">
             View Our Programmes
             <ArrowRight size={18} />
-          </a>
-          <a href="/apply" className="programme-btn programme-btn-secondary">
+          </Link>
+          <Link to="/apply" className="programme-btn programme-btn-secondary">
             Apply Now
-          </a>
+          </Link>
         </div>
       </div>
     </section>

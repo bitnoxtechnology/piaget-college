@@ -1,7 +1,6 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { Target, GraduationCap, FileText, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import "../styles/services.css";
 
 const Services = () => {
@@ -103,15 +102,10 @@ const Services = () => {
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
 
-                <motion.a
-                  href={service.link}
-                  className="service-button"
-                  whileHover={{ gap: "12px" }}
-                  transition={{ duration: 0.3 }}
-                >
+                <Link to={service.link} className="service-button">
                   <span>{service.buttonText}</span>
                   <ArrowRight size={18} />
-                </motion.a>
+                </Link>
               </motion.div>
             );
           })}
