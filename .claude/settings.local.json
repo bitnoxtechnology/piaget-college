@@ -3,7 +3,10 @@
     "allow": [
       "Bash(npm install *)",
       "Bash(npm list *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\USER\\\\Documents\\\\Codes\\\\Piaget\\\\piaget-college\\\\paiget-college\\\\src\" -Recurse)",
+      "Bash(Select-Object FullName, PSIsContainer)",
+      "Bash(Format-Table -AutoSize)"
     ]
   }
 }

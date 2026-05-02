@@ -119,6 +119,20 @@ export default function HeroSection() {
               >
                 <AnimatedText text={slides[current].subtitle} />
               </motion.div>
+
+              <motion.div
+                className="hero-cta"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+              >
+                <a href="/academics/available-courses" className="hero-btn hero-btn-primary">
+                  Explore Programs
+                </a>
+                <a href="/apply" className="hero-btn hero-btn-secondary">
+                  Apply Now
+                </a>
+              </motion.div>
             </motion.div>
           </motion.div>
         </AnimatePresence>

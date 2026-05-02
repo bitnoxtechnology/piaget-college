@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react"
+import { Phone, ArrowRight } from "lucide-react"
 import "../styles/programmeinfo.css"
 
 const ProgrammeInfo = () => {
@@ -25,6 +25,16 @@ const ProgrammeInfo = () => {
         <div className="programme-contact">
           <Phone size={24} />
           <span>0809 772 9616</span>
+        </div>
+
+        <div className="programme-actions">
+          <a href="/academics/available-courses" className="programme-btn programme-btn-primary">
+            View Our Programmes
+            <ArrowRight size={18} />
+          </a>
+          <a href="/apply" className="programme-btn programme-btn-secondary">
+            Apply Now
+          </a>
         </div>
       </div>
     </section>

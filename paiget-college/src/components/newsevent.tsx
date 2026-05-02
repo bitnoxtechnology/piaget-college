@@ -103,7 +103,7 @@ const NewsEvents = () => {
         </div>
 
         {/* CTA Button */}
-        {posts.length > 3 && (
+        {posts.length > 0 && (
           <motion.div
             className="mt-12! text-center"
             initial={{ opacity: 0, y: 20 }}
